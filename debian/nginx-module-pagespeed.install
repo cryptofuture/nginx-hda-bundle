@@ -1,0 +1,2 @@
+objs/ngx_pagespeed.so usr/lib/nginx/modules
+objs/ngx_pagespeed-debug.so usr/lib/nginx/modules

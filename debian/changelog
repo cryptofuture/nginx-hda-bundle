@@ -1,0 +1,44 @@
+nginx (1.10.0-6-ppa7~xenial) xenial; urgency=medium
+
+  * Fixed modules urls in preinstall.
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Sat, 30 Apr 2016 07:21:19 +0000
+
+nginx (1.10.0-5-ppa7~trusty) trusty; urgency=medium
+
+  * TLS record patch fixed a bit.
+  * Upstream update.
+  * Dynamic modules.
+  * Upstream order module.
+  * unused variable in upstream order module fixed.
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Fri, 29 Apr 2016 19:20:05 +0000
+
+nginx (1.8.1-1-ppa7) trusty; urgency=medium
+
+  * Modules and release update.
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Wed, 10 Feb 2016 18:33:17 +0000
+
+nginx (1.8.0-2-ppa7) trusty; urgency=medium
+
+  * Modules and upstream update.
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Mon, 21 Dec 2015 14:32:14 +0000
+
+nginx (1.8.0-1-ppa7) trusty; urgency=medium
+
+  * Some optimizations.
+  * headers-more-nginx  module.
+  * lua-nginx module.
+  * naxsi module.
+  * nginx-length-hiding-filter module.
+  * nginx_session_binding_proxy module.
+  * ngx_devel_kit module.
+  * ngx_pagespeed module.
+  * ngx_postgres module.
+  * rds-json-nginx module.
+  * testcookie-nginx module.
+  * http_dav, http_flv, http_mp4, http_stub_status modules removed.
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Thu, 18 Jun 2015 19:23:30 +0000

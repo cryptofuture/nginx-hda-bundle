@@ -1,0 +1,159 @@
+#!/usr/bin/make -f
+
+#export DH_VERBOSE=1
+CFLAGS ?= $(shell dpkg-buildflags --get CFLAGS)
+LDFLAGS ?= $(shell dpkg-buildflags --get LDFLAGS)
+WITH_HTTP2 := $(shell printf \
+	"Source: nginx\nBuild-Depends: libssl-dev (>= 1.0.1)\n" | \
+	dpkg-checkbuilddeps - >/dev/null 2>&1 && \
+	echo "--with-http_v2_module")
+PKGS = nginx nginx-dbg \
+	nginx-module-xslt \
+	nginx-module-geoip \
+	nginx-module-image-filter \
+	nginx-module-perl \
+	nginx-module-njs \
+	nginx-module-pagespeed \
+	nginx-module-http-headers-more \
+	nginx-module-lua \
+	nginx-module-naxsi \
+	nginx-module-lenght-hiding-filter \
+	nginx-module-session-binding-proxy \
+	nginx-module-devel-kit \
+	nginx-module-upstream-order \
+	nginx-module-rds-json \
+	nginx-module-testcookie
+COMMON_CONFIGURE_ARGS := \
+	--prefix=/etc/nginx \
+	--sbin-path=/usr/sbin/nginx \
+	--modules-path=/usr/lib/nginx/modules \
+	--conf-path=/etc/nginx/nginx.conf \
+	--error-log-path=/var/log/nginx/error.log \
+	--http-log-path=/var/log/nginx/access.log \
+	--pid-path=/var/run/nginx.pid \
+	--lock-path=/var/run/nginx.lock \
+	--http-client-body-temp-path=/var/cache/nginx/client_temp \
+	--http-proxy-temp-path=/var/cache/nginx/proxy_temp \
+	--http-fastcgi-temp-path=/var/cache/nginx/fastcgi_temp \
+	--http-uwsgi-temp-path=/var/cache/nginx/uwsgi_temp \
+	--http-scgi-temp-path=/var/cache/nginx/scgi_temp \
+	--user=nginx \
+	--group=nginx \
+	--with-http_ssl_module \
+	--with-http_realip_module \
+	--with-http_addition_module \
+	--with-http_sub_module \
+	--with-http_gunzip_module \
+	--with-http_gzip_static_module \
+	--with-http_random_index_module \
+	--with-http_secure_link_module \
+	--with-http_stub_status_module \
+	--with-http_auth_request_module \
+	--with-http_xslt_module=dynamic \
+	--with-http_image_filter_module=dynamic \
+	--with-http_geoip_module=dynamic \
+	--with-http_perl_module=dynamic \
+	--add-module=$(CURDIR)/debian/extra/ngx_postgres-7950a25-pull24 \
+	--add-dynamic-module=debian/extra/njs-1c50334fbea6/nginx \
+	--add-dynamic-module=debian/extra/ngx_pagespeed-0db78f6 \
+	--add-dynamic-module=debian/extra/headers-more-nginx-module-b120f86 \
+	--add-dynamic-module=debian/extra/lua-nginx-module-6683a8b \
+	--add-dynamic-module=debian/extra/naxsi-5ab2309-pull258/naxsi_src/ \
+	--add-dynamic-module=debian/extra/nginx-length-hiding-filter-module-a32abbe \
+	--add-dynamic-module=debian/extra/nginx_session_binding_proxy_module-22a4775 \
+	--add-dynamic-module=debian/extra/ngx_devel_kit-f119fe8 \
+	--add-dynamic-module=debian/extra/ngx_http_upstream_order-d820667 \
+	--add-dynamic-module=debian/extra/rds-json-nginx-module-df01245-pull4 \
+	--add-dynamic-module=debian/extra/testcookie-nginx-module-afd9e7a \
+	--with-threads \
+	--with-stream \
+	--with-stream_ssl_module \
+	--with-http_slice_module \
+	--with-file-aio \
+	--with-ipv6 \
+	$(WITH_HTTP2) \
+	--with-cc-opt="$(CFLAGS)" \
+	--with-ld-opt="$(LDFLAGS)"
+
+%:
+	dh $@ 
+
+override_dh_auto_configure: configure_debug
+
+override_dh_strip:
+	dh_strip --dbg-package=nginx-dbg
+
+override_dh_auto_build:
+	dh_auto_build
+	mv objs/nginx objs/nginx-debug
+	mv objs/ngx_http_xslt_filter_module.so objs/ngx_http_xslt_filter_module-debug.so
+	mv objs/ngx_http_image_filter_module.so objs/ngx_http_image_filter_module-debug.so
+	mv objs/ngx_http_geoip_module.so objs/ngx_http_geoip_module-debug.so
+	mv objs/ngx_http_perl_module.so objs/ngx_http_perl_module-debug.so
+	mv objs/src/http/modules/perl/blib/arch/auto/nginx/nginx.so objs/src/http/modules/perl/blib/arch/auto/nginx/nginx-debug.so
+	mv objs/ngx_http_js_module.so objs/ngx_http_js_module-debug.so
+	mv objs/ngx_pagespeed.so objs/ngx_pagespeed-debug.so
+	mv objs/ngx_http_headers_more_filter_module.so objs/ngx_http_headers_more_filter_module-debug.so
+	mv objs/ngx_http_lua_module.so objs/ngx_http_lua_module-debug.so
+	mv objs/ngx_http_naxsi_module.so objs/ngx_http_naxsi_module-debug.so
+	mv objs/ngx_http_length_hiding_filter_module.so objs/ngx_http_length_hiding_filter_module-debug.so
+	mv objs/ngx_http_session_binding_proxy_module.so objs/ngx_http_session_binding_proxy_module-debug.so
+	mv objs/ndk_http_module.so objs/ndk_http_module-debug.so
+	mv objs/ngx_http_upstream_order_module.so objs/ngx_http_upstream_order_module-debug.so
+	mv objs/ngx_http_rds_json_filter_module.so objs/ngx_http_rds_json_filter_module-debug.so
+	mv objs/ngx_http_testcookie_access_module.so objs/ngx_http_testcookie_access_module-debug.so
+	CFLAGS="" ./configure $(COMMON_CONFIGURE_ARGS)
+	dh_auto_build
+
+configure_debug:
+	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed-0db78f6/1.11.33.0.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed-0db78f6/
+	CFLAGS="" ./configure $(COMMON_CONFIGURE_ARGS) \
+		--with-debug
+
+override_dh_auto_install:
+	sed -e 's/%%PROVIDES%%/nginx/g' \
+		-e 's/%%DEFAULTSTART%%/2 3 4 5/g' \
+		-e 's/%%DEFAULTSTOP%%/0 1 6/g' \
+		< debian/init.d.in > debian/init.d
+	dh_auto_install
+	mkdir -p debian/nginx/etc/init.d debian/nginx/etc/default \
+		debian/nginx/usr/lib/nginx/modules
+	sed -e 's/%%PROVIDES%%/nginx-debug/g' \
+		-e 's/%%DEFAULTSTART%%//g' \
+		-e 's/%%DEFAULTSTOP%%/0 1 2 3 4 5 6/g' \
+		< debian/init.d.in > debian/debug.init.d
+	/usr/bin/install -m 755 debian/debug.init.d \
+		debian/nginx/etc/init.d/nginx-debug
+	/usr/bin/install -m 644 debian/nginx-debug.default \
+		debian/nginx/etc/default/nginx-debug
+	/usr/bin/install -m 644 debian/nginx.conf debian/nginx/etc/nginx/
+	/usr/bin/install -m 644 conf/win-utf debian/nginx/etc/nginx/
+	/usr/bin/install -m 644 conf/koi-utf debian/nginx/etc/nginx/
+	/usr/bin/install -m 644 conf/koi-win debian/nginx/etc/nginx/
+	/usr/bin/install -m 644 conf/mime.types debian/nginx/etc/nginx/
+	/usr/bin/install -m 644 conf/scgi_params debian/nginx/etc/nginx/
+	/usr/bin/install -m 644 conf/fastcgi_params debian/nginx/etc/nginx/
+	/usr/bin/install -m 644 conf/uwsgi_params debian/nginx/etc/nginx/
+	/usr/bin/install -m 644 html/index.html \
+		debian/nginx/usr/share/nginx/html/
+	/usr/bin/install -m 644 html/50x.html \
+		debian/nginx/usr/share/nginx/html/
+	/usr/bin/install -m 644 debian/nginx.vh.default.conf \
+		debian/nginx/etc/nginx/conf.d/default.conf
+	/usr/bin/install -m 755 objs/nginx  debian/nginx/usr/sbin/
+	/usr/bin/install -m 755 objs/nginx-debug  debian/nginx/usr/sbin/
+	cd debian/nginx/etc/nginx && /bin/ln -s \
+		../../usr/lib/nginx/modules modules && cd -
+
+override_dh_gencontrol:
+	for p in $(PKGS); do \
+		if [ -e debian/$$p.version ]; then \
+			dpkg-gencontrol -p$$p -ldebian/changelog -Tdebian/$$p.substvars -Pdebian/$$p -v`cat debian/$$p.version`~`lsb_release -cs`; \
+		else \
+			dpkg-gencontrol -p$$p -ldebian/changelog -Tdebian/$$p.substvars -Pdebian/$$p ; \
+		fi ; \
+	done
+
+override_dh_clean:
+	dh_clean
+	rm -f debian/*init.d

@@ -1,0 +1,30 @@
+#!/bin/sh
+
+case "$1" in
+    install)
+        cat <<BANNER
+----------------------------------------------------------------------
+
+The Nginx Development Kit module for nginx has been installed.
+To enable this module, add the following to /etc/nginx/nginx.conf
+and reload nginx:
+
+    load_module modules/ndk_http_module.so;
+
+Please refer to the module documentation for further details:
+https://github.com/simpl/ngx_devel_kit
+
+----------------------------------------------------------------------
+BANNER
+        ;;
+    upgrade|abort-upgrade)
+        ;;
+    *)
+        echo "preinst called with unknown argument \`$1'" >&2
+        exit 0
+        ;;
+esac
+
+#DEBHELPER#
+
+exit 0

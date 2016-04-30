@@ -1,0 +1,2 @@
+objs/ngx_http_xslt_filter_module.so usr/lib/nginx/modules
+objs/ngx_http_xslt_filter_module-debug.so usr/lib/nginx/modules

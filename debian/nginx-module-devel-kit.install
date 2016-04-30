@@ -1,0 +1,2 @@
+objs/ndk_http_module.so usr/lib/nginx/modules
+objs/ndk_http_module-debug.so usr/lib/nginx/modules

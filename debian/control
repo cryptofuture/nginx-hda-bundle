@@ -1,0 +1,143 @@
+Source: nginx
+Section: httpd
+Priority: optional
+Maintainer: hda_launchpad (hda_launchpad) <admin@hda.me>
+XSBC-Original-Maintainer: Sergey Budnevitch <sb@nginx.com>
+Build-Depends: debhelper (>= 7.0.50~),
+               libgd2-xpm-dev,
+               libgeoip-dev,
+               libpcre3-dev,
+               libperl-dev,
+               libssl-dev (>= 0.9.7),
+               libxslt1-dev,
+               lsb-release,
+               zlib1g-dev,
+               libluajit-5.1-dev,
+               tar,
+               libpq-dev
+Standards-Version: 3.9.1
+Homepage: http://nginx.org
+
+Package: nginx
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, lsb-base, adduser
+Provides: httpd
+Description: high performance web server
+ nginx [engine x] is an HTTP and reverse proxy server, as well as
+ a mail proxy server.
+
+Package: nginx-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: ${misc:Depends}, nginx (= ${source:Version})
+Description: nginx debug symbols
+ This package contains the debugging symbols for nginx.
+
+Package: nginx-module-xslt
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: xslt module
+ This package contains dynamic xslt module for nginx.
+
+Package: nginx-module-image-filter
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: image filter module
+ This package contains dynamic image filter module for nginx.
+
+Package: nginx-module-geoip
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: geoip module
+ This package contains dynamic geoip module for nginx.
+
+Package: nginx-module-perl
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends}, ${shlibs:Depends}, ${perl:Depends}, nginx (= ${source:Version})
+Description: perl module
+ This package contains dynamic perl module for nginx.
+
+Package: nginx-module-njs
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: nJScript module
+ This package contains dynamic nJScript module for nginx.
+
+Package: nginx-module-pagespeed
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: PageSpeed module
+ This package contains dynamic pagespeed module for nginx.
+
+Package: nginx-module-http-headers-more
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: http-headers-more module
+ This package contains dynamic http-headers-more module for nginx.
+
+Package: nginx-module-lua
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: Lua module
+ This package contains dynamic lua module for nginx.
+
+Package: nginx-module-naxsi
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: Naxsi module
+ This package contains dynamic naxsi module for nginx.
+
+Package: nginx-module-lenght-hiding-filter
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: Lenght Hiding Filter module
+ This package contains dynamic lenght-hiding-filter module for nginx.
+
+Package: nginx-module-session-binding-proxy
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: Session Binding Proxy
+ This package contains dynamic session-binding-proxy module for nginx.
+
+Package: nginx-module-devel-kit
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: ngx_devel_kit
+ This package contains ngx_devel_kit module for nginx.
+ 
+Package: nginx-module-upstream-order
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: Upstream Order Module
+ This package contains upstream-order module for nginx.
+
+Package: nginx-module-rds-json
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: Rds json Module
+ This package contains rds json filter module for nginx.
+
+Package: nginx-module-testcookie
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: Tesk cookie Module
+ This package contains test cookie module for nginx.
+
+
+
