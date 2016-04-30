@@ -11,7 +11,6 @@
 - [rds-json-nginx](https://github.com/openresty/rds-json-nginx-module) with pull 4 patch
 - [testcookie-nginx](https://github.com/kyprizel/testcookie-nginx-module)
 - [nginx-upstream-order](https://github.com/flygoast/ngx_http_upstream_order)
-- 
   2. Static modules  
 - [ngx_postgres module](https://github.com/FRiCKLE/ngx_postgres) with pull 24 patch
 
@@ -23,7 +22,6 @@
 - http_geoip module
 - http_perl module
 - ngx_http_js module
-
   4. Static modules
 - http_ssl module
 - http_realip module
