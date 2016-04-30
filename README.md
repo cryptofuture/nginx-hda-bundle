@@ -22,6 +22,7 @@
 - http_geoip module
 - http_perl module
 - ngx_http_js module
+
   4. Static modules
 - http_ssl module
 - http_realip module
