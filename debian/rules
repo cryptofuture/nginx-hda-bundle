@@ -53,18 +53,18 @@ COMMON_CONFIGURE_ARGS := \
 	--with-http_image_filter_module=dynamic \
 	--with-http_geoip_module=dynamic \
 	--with-http_perl_module=dynamic \
-	--add-module=$(CURDIR)/debian/extra/ngx_postgres-7950a25-pull24 \
-	--add-dynamic-module=debian/extra/njs-1c50334fbea6/nginx \
-	--add-dynamic-module=debian/extra/ngx_pagespeed-0db78f6 \
-	--add-dynamic-module=debian/extra/headers-more-nginx-module-b120f86 \
-	--add-dynamic-module=debian/extra/lua-nginx-module-6683a8b \
-	--add-dynamic-module=debian/extra/naxsi-5ab2309-pull258/naxsi_src/ \
-	--add-dynamic-module=debian/extra/nginx-length-hiding-filter-module-a32abbe \
-	--add-dynamic-module=debian/extra/nginx_session_binding_proxy_module-22a4775 \
-	--add-dynamic-module=debian/extra/ngx_devel_kit-f119fe8 \
-	--add-dynamic-module=debian/extra/ngx_http_upstream_order-d820667 \
-	--add-dynamic-module=debian/extra/rds-json-nginx-module-df01245-pull4 \
-	--add-dynamic-module=debian/extra/testcookie-nginx-module-afd9e7a \
+	--add-module=$(CURDIR)/debian/extra/ngx_postgres \
+	--add-dynamic-module=debian/extra/njs/nginx \
+	--add-dynamic-module=debian/extra/ngx_pagespeed \
+	--add-dynamic-module=debian/extra/headers-more-nginx-module \
+	--add-dynamic-module=debian/extra/lua-nginx-module \
+	--add-dynamic-module=debian/extra/naxsi/naxsi_src/ \
+	--add-dynamic-module=debian/extra/nginx-length-hiding-filter-module \
+	--add-dynamic-module=debian/extra/Session-Binding-Proxy/nginx_session_binding_proxy_module \
+	--add-dynamic-module=debian/extra/ngx_devel_kit \
+	--add-dynamic-module=debian/extra/ngx_http_upstream_order \
+	--add-dynamic-module=debian/extra/rds-json-nginx-module \
+	--add-dynamic-module=debian/extra/testcookie-nginx-module \
 	--with-threads \
 	--with-stream \
 	--with-stream_ssl_module \
@@ -106,7 +106,7 @@ override_dh_auto_build:
 	dh_auto_build
 
 configure_debug:
-	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed-0db78f6/1.11.33.0.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed-0db78f6/
+	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.11.33.0.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
 	CFLAGS="" ./configure $(COMMON_CONFIGURE_ARGS) \
 		--with-debug
 

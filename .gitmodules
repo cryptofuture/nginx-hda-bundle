@@ -1,3 +1,36 @@
 [submodule "debian/extra/headers-more-nginx-module"]
 	path = debian/extra/headers-more-nginx-module
 	url = https://github.com/openresty/headers-more-nginx-module
+[submodule "debian/extra/lua-nginx-module"]
+	path = debian/extra/lua-nginx-module
+	url = https://github.com/openresty/lua-nginx-module
+[submodule "debian/extra/naxsi"]
+	path = debian/extra/naxsi
+	url = https://github.com/cryptofuture/naxsi
+[submodule "debian/extra/nginx-length-hiding-filter-module"]
+	path = debian/extra/nginx-length-hiding-filter-module
+	url = https://github.com/cryptofuture/nginx-length-hiding-filter-module
+[submodule "debian/extra/Session-Binding-Proxy"]
+	path = debian/extra/Session-Binding-Proxy
+	url = https://github.com/wburgers/Session-Binding-Proxy
+[submodule "debian/extra/ngx_devel_kit"]
+	path = debian/extra/ngx_devel_kit
+	url = https://github.com/simpl/ngx_devel_kit
+[submodule "debian/extra/ngx_http_upstream_order"]
+	path = debian/extra/ngx_http_upstream_order
+	url = https://github.com/cryptofuture/ngx_http_upstream_order
+[submodule "debian/extra/ngx_pagespeed"]
+	path = debian/extra/ngx_pagespeed
+	url = https://github.com/pagespeed/ngx_pagespeed
+[submodule "debian/extra/testcookie-nginx-module"]
+	path = debian/extra/testcookie-nginx-module
+	url = https://github.com/kyprizel/testcookie-nginx-module
+[submodule "debian/extra/ngx_postgres"]
+	path = debian/extra/ngx_postgres
+	url = https://github.com/cryptofuture/ngx_postgres
+[submodule "debian/extra/rds-json-nginx-module"]
+	path = debian/extra/rds-json-nginx-module
+	url = https://github.com/cryptofuture/rds-json-nginx-module
+[submodule "debian/extra/njs"]
+	path = debian/extra/njs
+	url = https://github.com/nginx/njs
