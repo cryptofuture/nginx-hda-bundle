@@ -42,10 +42,11 @@ Modules removed: http_dav, http_flv, http_mp4
 ####Optimizations made
 * Server version changed to cloudflare-nginx
 * [TLS TTFB optimization](https://www.igvita.com/2013/12/16/optimizing-nginx-tls-time-to-first-byte/)
-  > Note:1360 buffer size used instead 1400.
+  > Note: 1360 buffer size used instead 1400.
 
-- How-to load dynamic modules?
-Add the following to to the top of /etc/nginx/nginx.conf (for example after pid) and reload nginx:
+#### How-to load dynamic modules?
+Add the following to to the top of /etc/nginx/nginx.conf (for example after pid) and reload nginx.
+```
 load_module modules/ndk_http_module.so;
 load_module modules/ngx_http_geoip_module.so;
 load_module modules/ngx_http_headers_more_filter_module.so;
@@ -61,4 +62,5 @@ load_module modules/ngx_http_session_binding_proxy_module.so;
 load_module modules/ngx_http_testcookie_access_module.so;
 load_module modules/ngx_http_upstream_order_module.so;
 load_module modules/ngx_http_xslt_filter_module.so;
-Note: Use only modules you need to use. With dynamic modules this is pretty easy.
+```
+  > Note: Use only modules you need to use. With dynamic modules this is pretty easy.
