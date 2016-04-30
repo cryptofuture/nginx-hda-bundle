@@ -45,7 +45,7 @@ Modules removed: http_dav, http_flv, http_mp4
   > Note: 1360 buffer size used instead 1400.
 
 #### How-to load dynamic modules?
-Add the following to to the top of /etc/nginx/nginx.conf (for example after pid) and reload nginx.
+Add the following to the top of /etc/nginx/nginx.conf (for example after pid) and reload nginx.
 ```
 load_module modules/ndk_http_module.so;
 load_module modules/ngx_http_geoip_module.so;
