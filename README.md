@@ -11,6 +11,7 @@
 - [rds-json-nginx](https://github.com/openresty/rds-json-nginx-module) with pull 4 patch
 - [testcookie-nginx](https://github.com/kyprizel/testcookie-nginx-module)
 - [nginx-upstream-order](https://github.com/flygoast/ngx_http_upstream_order)
+- 
   2. Static modules  
 - [ngx_postgres module](https://github.com/FRiCKLE/ngx_postgres) with pull 24 patch
 
@@ -71,7 +72,13 @@ load_module modules/ngx_http_xslt_filter_module.so;
 *Slower way*: Create issue request with module description and link to module, and I'll do it myself in spare time.
 
 #### Where I can find PPA?
-PPA located here[https://launchpad.net/~hda-me/+archive/ubuntu/nginx-stable]
+PPA located [here](https://launchpad.net/~hda-me/+archive/ubuntu/nginx-stable)
+You can add it with
+```bash
+sudo apt-add-repository ppa:hda-me/nginx-stable
+sudo apt-get update
+sudo apt-get install nginx nginx-module-name-you-wish
+```
 
 #### Donation
 Bitcoin : 1N5czHaoSLukFSTq2ZJujaWGjkmBxv2dT9
