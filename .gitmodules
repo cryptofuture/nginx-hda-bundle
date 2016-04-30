@@ -18,7 +18,7 @@
 	url = https://github.com/simpl/ngx_devel_kit
 [submodule "debian/extra/ngx_http_upstream_order"]
 	path = debian/extra/ngx_http_upstream_order
-	url = https://github.com/cryptofuture/ngx_http_upstream_order
+	url = https://github.com/flygoast/ngx_http_upstream_order
 [submodule "debian/extra/ngx_pagespeed"]
 	path = debian/extra/ngx_pagespeed
 	url = https://github.com/pagespeed/ngx_pagespeed
