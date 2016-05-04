@@ -106,7 +106,7 @@ override_dh_auto_build:
 	dh_auto_build
 
 configure_debug:
-	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.11.33.0.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
+	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.11.33.1.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
 	CFLAGS="" ./configure $(COMMON_CONFIGURE_ARGS) \
 		--with-debug
 
