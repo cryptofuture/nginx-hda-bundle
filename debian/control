@@ -139,5 +139,13 @@ Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
 Description: Tesk cookie Module
  This package contains test cookie module for nginx.
 
+Package: nginx-module-postgres
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: Tesk cookie Module
+ This package contains ngx_postgres module for nginx.
+ 
+
 
 
