@@ -13,6 +13,7 @@ PKGS = nginx nginx-dbg \
 	nginx-module-image-filter \
 	nginx-module-perl \
 	nginx-module-njs \
+	nginx-module-postgres \
 	nginx-module-pagespeed \
 	nginx-module-http-headers-more \
 	nginx-module-lua \
@@ -53,7 +54,7 @@ COMMON_CONFIGURE_ARGS := \
 	--with-http_image_filter_module=dynamic \
 	--with-http_geoip_module=dynamic \
 	--with-http_perl_module=dynamic \
-	--add-module=$(CURDIR)/debian/extra/ngx_postgres \
+	--add-dynamic-module=debian/extra/ngx_postgres \
 	--add-dynamic-module=debian/extra/njs/nginx \
 	--add-dynamic-module=debian/extra/ngx_pagespeed \
 	--add-dynamic-module=debian/extra/headers-more-nginx-module \
@@ -102,6 +103,7 @@ override_dh_auto_build:
 	mv objs/ngx_http_upstream_order_module.so objs/ngx_http_upstream_order_module-debug.so
 	mv objs/ngx_http_rds_json_filter_module.so objs/ngx_http_rds_json_filter_module-debug.so
 	mv objs/ngx_http_testcookie_access_module.so objs/ngx_http_testcookie_access_module-debug.so
+	mv objs/ngx_postgres.so objs/ngx_postgres-debug.so
 	CFLAGS="" ./configure $(COMMON_CONFIGURE_ARGS)
 	dh_auto_build
 
