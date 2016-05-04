@@ -28,6 +28,7 @@
 [submodule "debian/extra/ngx_postgres"]
 	path = debian/extra/ngx_postgres
 	url = https://github.com/cryptofuture/ngx_postgres
+	branch = pull24
 [submodule "debian/extra/rds-json-nginx-module"]
 	path = debian/extra/rds-json-nginx-module
 	url = https://github.com/cryptofuture/rds-json-nginx-module
