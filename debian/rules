@@ -22,7 +22,8 @@ PKGS = nginx nginx-dbg \
 	nginx-module-devel-kit \
 	nginx-module-upstream-order \
 	nginx-module-rds-json \
-	nginx-module-testcookie
+	nginx-module-testcookie \
+	nginx-module-brotli
 COMMON_CONFIGURE_ARGS := \
 	--prefix=/etc/nginx \
 	--sbin-path=/usr/sbin/nginx \
@@ -65,6 +66,7 @@ COMMON_CONFIGURE_ARGS := \
 	--add-dynamic-module=debian/extra/ngx_http_upstream_order \
 	--add-dynamic-module=debian/extra/rds-json-nginx-module \
 	--add-dynamic-module=debian/extra/testcookie-nginx-module \
+	--add-dynamic-module=debian/extra/ngx_brotli \
 	--with-threads \
 	--with-stream \
 	--with-stream_ssl_module \
@@ -102,11 +104,12 @@ override_dh_auto_build:
 	mv objs/ngx_http_upstream_order_module.so objs/ngx_http_upstream_order_module-debug.so
 	mv objs/ngx_http_rds_json_filter_module.so objs/ngx_http_rds_json_filter_module-debug.so
 	mv objs/ngx_http_testcookie_access_module.so objs/ngx_http_testcookie_access_module-debug.so
+	mv objs/ngx_http_brotli_filter_module.so objs/ngx_http_brotli_filter_module-debug.so
 	CFLAGS="" ./configure $(COMMON_CONFIGURE_ARGS)
 	dh_auto_build
 
 configure_debug:
-	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.11.33.1.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
+	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.11.33.2.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
 	CFLAGS="" ./configure $(COMMON_CONFIGURE_ARGS) \
 		--with-debug
 

@@ -14,7 +14,8 @@ Build-Depends: debhelper (>= 7.0.50~),
                zlib1g-dev,
                libluajit-5.1-dev,
                tar,
-               libpq-dev
+               libpq-dev,
+               libbrotli
 Standards-Version: 3.9.1
 Homepage: http://nginx.org
 
@@ -138,6 +139,13 @@ Priority: extra
 Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
 Description: Tesk cookie Module
  This package contains test cookie module for nginx.
+
+Package: nginx-module-brotli
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version}), libbrotli
+Description: Tesk cookie Module
+ This package contains brotli module for nginx.
  
  
 

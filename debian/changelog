@@ -1,3 +1,10 @@
+nginx (1.10.0-7-ppa7~xenial) xenial; urgency=medium
+
+  * Modules upstream updates.
+  * ngx_brotli module.
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Mon, 06 Jun 2016 15:27:49 +0000
+
 nginx (1.10.0-6-ppa7~xenial) xenial; urgency=medium
 
   * Fixed modules urls in preinstall.

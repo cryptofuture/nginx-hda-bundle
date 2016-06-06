@@ -9,7 +9,7 @@
 	url = https://github.com/cryptofuture/naxsi
 [submodule "debian/extra/nginx-length-hiding-filter-module"]
 	path = debian/extra/nginx-length-hiding-filter-module
-	url = https://github.com/cryptofuture/nginx-length-hiding-filter-module
+	url = https://github.com/nulab/nginx-length-hiding-filter-module
 [submodule "debian/extra/Session-Binding-Proxy"]
 	path = debian/extra/Session-Binding-Proxy
 	url = https://github.com/wburgers/Session-Binding-Proxy
@@ -36,3 +36,6 @@
 [submodule "debian/extra/njs"]
 	path = debian/extra/njs
 	url = https://github.com/nginx/njs
+[submodule "debian/extra/ngx_brotli"]
+	path = debian/extra/ngx_brotli
+	url = https://github.com/google/ngx_brotli
