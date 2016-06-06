@@ -144,7 +144,7 @@ Package: nginx-module-brotli
 Architecture: any
 Priority: extra
 Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version}), libbrotli
-Description: Tesk cookie Module
+Description: Brotli Module
  This package contains brotli module for nginx.
  
  
