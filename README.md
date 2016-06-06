@@ -11,6 +11,7 @@
 - [rds-json-nginx](https://github.com/openresty/rds-json-nginx-module) with pull 4 patch
 - [testcookie-nginx](https://github.com/kyprizel/testcookie-nginx-module)
 - [nginx-upstream-order](https://github.com/flygoast/ngx_http_upstream_order)
+- [ngx_brotli](https://github.com/google/ngx_brotli)
   2. Static modules  
 - [ngx_postgres module](https://github.com/FRiCKLE/ngx_postgres) with pull 24 patch
 
@@ -62,6 +63,7 @@ load_module modules/ngx_http_session_binding_proxy_module.so;
 load_module modules/ngx_http_testcookie_access_module.so;
 load_module modules/ngx_http_upstream_order_module.so;
 load_module modules/ngx_http_xslt_filter_module.so;
+load_module modules/ngx_http_brotli_filter_module.so;
 ```
   > Note: Use only modules you need to use. With dynamic modules this is pretty easy.
   
