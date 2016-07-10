@@ -11,7 +11,9 @@
 - [rds-json-nginx](https://github.com/openresty/rds-json-nginx-module) with pull 4 patch
 - [testcookie-nginx](https://github.com/kyprizel/testcookie-nginx-module)
 - [nginx-upstream-order](https://github.com/flygoast/ngx_http_upstream_order)
-- [ngx_brotli](https://github.com/google/ngx_brotli)
+- [ngx_brotli](https://github.com/google/ngx_brotli) :
+     - ngx_brotli filter module - used to compress responses on-the-fly.  
+     - ngx_brotli static module - used to serve pre-compressed files.
   2. Static modules  
 - [ngx_postgres module](https://github.com/FRiCKLE/ngx_postgres) with pull 24 patch
 
@@ -47,7 +49,7 @@ Modules removed: http_dav, http_flv, http_mp4
 
 #### How-to load dynamic modules?
 Add the following to the top of /etc/nginx/nginx.conf (for example after pid) and reload nginx.
-```
+```bash
 load_module modules/ndk_http_module.so;
 load_module modules/ngx_http_geoip_module.so;
 load_module modules/ngx_http_headers_more_filter_module.so;
@@ -63,7 +65,11 @@ load_module modules/ngx_http_session_binding_proxy_module.so;
 load_module modules/ngx_http_testcookie_access_module.so;
 load_module modules/ngx_http_upstream_order_module.so;
 load_module modules/ngx_http_xslt_filter_module.so;
+# ngx_brotli filter module - used to compress responses on-the-fly.
 load_module modules/ngx_http_brotli_filter_module.so;
+# ngx_brotli static module - used to serve pre-compressed files.
+# Both ngx_brotli modules could be used separately, but part of nginx-module-brotli package
+load_module modules/ngx_http_brotli_static_module.so;
 ```
   > Note: Use only modules you need to use. With dynamic modules this is pretty easy.
   
