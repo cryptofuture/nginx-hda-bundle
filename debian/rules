@@ -105,6 +105,7 @@ override_dh_auto_build:
 	mv objs/ngx_http_rds_json_filter_module.so objs/ngx_http_rds_json_filter_module-debug.so
 	mv objs/ngx_http_testcookie_access_module.so objs/ngx_http_testcookie_access_module-debug.so
 	mv objs/ngx_http_brotli_filter_module.so objs/ngx_http_brotli_filter_module-debug.so
+	mv objs/ngx_http_brotli_static_module.so objs/ngx_http_brotli_static_module-debug.so
 	CFLAGS="" ./configure $(COMMON_CONFIGURE_ARGS)
 	dh_auto_build
 

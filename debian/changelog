@@ -1,4 +1,17 @@
-nginx (1.10.0-7-ppa7~xenial) xenial; urgency=medium
+nginx (1.10.1-9-ppa7~xenial) xenial; urgency=medium
+
+  * Modules upstream update.
+  * ngx_http_brotli_static_module part of ngx_brotli package now too.
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Sun, 10 Jul 2016 07:33:41 +0000
+
+nginx (1.10.1-8-ppa7~trusty) trusty; urgency=medium
+
+  * Modules upstream update.
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Sat, 02 Jul 2016 11:19:30 +0000
+
+nginx (1.10.1-7-ppa7~xenial) xenial; urgency=medium
 
   * Modules upstream updates.
   * ngx_brotli module.

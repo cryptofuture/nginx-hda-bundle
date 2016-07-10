@@ -12,7 +12,7 @@
 - [testcookie-nginx](https://github.com/kyprizel/testcookie-nginx-module)
 - [nginx-upstream-order](https://github.com/flygoast/ngx_http_upstream_order)
 - [ngx_brotli](https://github.com/google/ngx_brotli) :
-     - ngx_brotli filter module  
+     - ngx_brotli filter module
      - ngx_brotli static module
   2. Static modules  
 - [ngx_postgres module](https://github.com/FRiCKLE/ngx_postgres) with pull 24 patch
