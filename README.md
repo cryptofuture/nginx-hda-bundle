@@ -28,7 +28,7 @@
 - ngx_stream module (linked with stream_ssl)
 - ngx_http_js module 
 
->  ngx_https_js upstream version broken now, version from previous package used in ppa.
+  >  ngx_https_js upstream version broken now, version from previous package used in ppa.
 
   4. Static modules
 - http_ssl module
@@ -63,6 +63,8 @@ load_module modules/ngx_http_naxsi_module.so;
 load_module modules/ngx_http_njs_filter_module.so;
 load_module modules/ngx_pagespeed.so;
 load_module modules/ngx_http_perl_module.so;
+load_module modules/ngx_stream_module.so;
+load_module modules/ngx_mail_module.so;
 load_module modules/ngx_http_rds_json_filter_module.so;
 load_module modules/ngx_http_session_binding_proxy_module.so;
 load_module modules/ngx_http_testcookie_access_module.so;
