@@ -1,0 +1,2 @@
+objs/ngx_stream_module.so usr/lib/nginx/modules
+objs/ngx_stream_module-debug.so usr/lib/nginx/modules

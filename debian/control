@@ -63,6 +63,20 @@ Depends: ${misc:Depends}, ${shlibs:Depends}, ${perl:Depends}, nginx (= ${source:
 Description: perl module
  This package contains dynamic perl module for nginx.
 
+Package: nginx-module-stream
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: stream module
+ This package contains dynamic stream module for nginx.
+
+Package: nginx-module-mail
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: mail module
+ This package contains dynamic mail module for nginx.
+
 Package: nginx-module-njs
 Architecture: any
 Priority: extra

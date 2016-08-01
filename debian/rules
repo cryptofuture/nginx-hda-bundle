@@ -12,6 +12,8 @@ PKGS = nginx nginx-dbg \
 	nginx-module-geoip \
 	nginx-module-image-filter \
 	nginx-module-perl \
+	nginx-module-stream \
+	nginx-module-mail \
 	nginx-module-njs \
 	nginx-module-pagespeed \
 	nginx-module-http-headers-more \
@@ -54,6 +56,10 @@ COMMON_CONFIGURE_ARGS := \
 	--with-http_image_filter_module=dynamic \
 	--with-http_geoip_module=dynamic \
 	--with-http_perl_module=dynamic \
+	--with-stream=dynamic \
+	--with-stream_ssl_module \
+	--with-mail=dynamic \
+	--with-mail_ssl_module \
 	--add-module=$(CURDIR)/debian/extra/ngx_postgres \
 	--add-dynamic-module=debian/extra/njs/nginx \
 	--add-dynamic-module=debian/extra/ngx_pagespeed \
@@ -68,8 +74,6 @@ COMMON_CONFIGURE_ARGS := \
 	--add-dynamic-module=debian/extra/testcookie-nginx-module \
 	--add-dynamic-module=debian/extra/ngx_brotli \
 	--with-threads \
-	--with-stream \
-	--with-stream_ssl_module \
 	--with-http_slice_module \
 	--with-file-aio \
 	--with-ipv6 \
@@ -93,6 +97,8 @@ override_dh_auto_build:
 	mv objs/ngx_http_geoip_module.so objs/ngx_http_geoip_module-debug.so
 	mv objs/ngx_http_perl_module.so objs/ngx_http_perl_module-debug.so
 	mv objs/src/http/modules/perl/blib/arch/auto/nginx/nginx.so objs/src/http/modules/perl/blib/arch/auto/nginx/nginx-debug.so
+	mv objs/ngx_stream_module.so objs/ngx_stream_module-debug.so
+	mv objs/ngx_mail_module.so objs/ngx_mail_module-debug.so
 	mv objs/ngx_http_js_module.so objs/ngx_http_js_module-debug.so
 	mv objs/ngx_pagespeed.so objs/ngx_pagespeed-debug.so
 	mv objs/ngx_http_headers_more_filter_module.so objs/ngx_http_headers_more_filter_module-debug.so

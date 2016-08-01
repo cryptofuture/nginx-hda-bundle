@@ -1,0 +1,2 @@
+objs/ngx_mail_module.so usr/lib/nginx/modules
+objs/ngx_mail_module-debug.so usr/lib/nginx/modules

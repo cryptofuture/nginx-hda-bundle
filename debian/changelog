@@ -1,3 +1,10 @@
+nginx (1.10.1-10-ppa7~xenial) xenial; urgency=medium
+
+  * Stream module as dynamic module.
+  * Mail module as dynamic module with xmpp support patch.
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Mon, 01 Aug 2016 11:55:01 +0000
+
 nginx (1.10.1-9-ppa7~xenial) xenial; urgency=medium
 
   * Modules upstream update.
