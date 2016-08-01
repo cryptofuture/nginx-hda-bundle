@@ -24,7 +24,11 @@
 - http_image_filter module
 - http_geoip module
 - http_perl module
-- ngx_http_js module
+- ngx_http_js module 
+
+  >  ngx_https_js upstream version broken now, version from previous package used in ppa.
+- ngx_mail module with [xmmp patch](https://github.com/cryptofuture/nginx-hda-bundle/blob/master/debian/patches/xmpp.patch) backported from (nginx-xmpp)[https://github.com/robn/nginx-xmpp] (linked with mail_ssl in same .so)
+- ngx_stream module (linked with stream_ssl in same .so)
 
   4. Static modules
 - http_ssl module
@@ -37,7 +41,6 @@
 - http_secure_link module
 - http_stub_status module
 - http_auth_request module
-- stream_ssl module
 - http_slice module
 
 Modules removed: http_dav, http_flv, http_mp4
