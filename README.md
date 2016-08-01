@@ -27,6 +27,7 @@
 - ngx_http_js module 
 
   >  ngx_https_js upstream version broken now, version from previous package used in ppa.
+  
 - ngx_mail module with [xmmp patch](https://github.com/cryptofuture/nginx-hda-bundle/blob/master/debian/patches/xmpp.patch) backported from (nginx-xmpp)[https://github.com/robn/nginx-xmpp] (linked with mail_ssl in same .so)
 - ngx_stream module (linked with stream_ssl in same .so)
 
