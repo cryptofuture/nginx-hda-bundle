@@ -1,4 +1,16 @@
-nginx (1.10.1-10-ppa7~xenial) xenial; urgency=medium
+nginx (1.10.1-12-ppa7~trusty) trusty; urgency=high
+
+  * XMPP backport fix.
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Tue, 02 Aug 2016 11:21:38 +0000
+
+nginx (1.10.1-11-ppa7~trusty) trusty; urgency=medium
+
+  * njs module broken in upstream. Downgrade to previous stable state.
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Mon, 01 Aug 2016 14:57:03 +0000
+
+nginx (1.10.1-10-ppa7~trusty) trusty; urgency=medium
 
   * Stream module as dynamic module.
   * Mail module as dynamic module with xmpp support patch.
