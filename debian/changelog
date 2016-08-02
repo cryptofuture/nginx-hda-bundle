@@ -1,4 +1,10 @@
-nginx (1.10.1-12-ppa7~trusty) trusty; urgency=high
+nginx (1.10.1-13-ppa7~trusty) trusty; urgency=medium
+
+  * XMMP backport hack. Should work now.
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Tue, 02 Aug 2016 17:40:00 +0000
+
+nginx (1.10.1-12-ppa7~xenial) xenial; urgency=high
 
   * XMPP backport fix.
 
