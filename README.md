@@ -24,7 +24,7 @@
 - http_image_filter module
 - http_geoip module
 - http_perl module
-- ngx_mail module with [xmmp patch](https://github.com/cryptofuture/nginx-hda-bundle/blob/master/debian/patches/xmpp.patch) backported from [nginx-xmpp](https://github.com/robn/nginx-xmpp) (linked with mail_ssl)
+- ngx_mail module with [xmmp patch](https://github.com/cryptofuture/nginx-hda-bundle/blob/master/debian/patches/xmpp.patch) backported from [nginx-xmpp](https://github.com/robn/nginx-xmpp) (linked with mail_ssl) **NOT FINISHED**
 - ngx_stream module (linked with stream_ssl)
 - ngx_http_js module 
 
