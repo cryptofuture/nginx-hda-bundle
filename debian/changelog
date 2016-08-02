@@ -1,4 +1,10 @@
-nginx (1.10.1-13-ppa7~trusty) trusty; urgency=medium
+nginx (1.10.1-14-ppa7~xenial) xenial; urgency=high
+
+  * XMMP backport hack fix. nginx-mail module with xmpp supported tested.
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Tue, 02 Aug 2016 19:37:58 +0000
+
+nginx (1.10.1-13-ppa7~xenial) xenial; urgency=medium
 
   * XMMP backport hack. Should work now.
 

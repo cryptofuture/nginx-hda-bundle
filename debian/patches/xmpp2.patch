@@ -5,9 +5,9 @@ Description: <short summary of the patch>
  information below has been extracted from the changelog. Adjust it or drop
  it.
  .
- nginx (1.10.1-12-ppa7~xenial) xenial; urgency=high
+ nginx (1.10.1-13-ppa7~xenial) xenial; urgency=medium
  .
-   * XMPP backport fix.
+   * XMMP backport hack. Should work now.
 Author: hda_launchpad (hda_launchpad) <admin@hda.me>
 
 ---
@@ -23,26 +23,43 @@ Forwarded: <no|not-needed|url proving that it has been forwarded>
 Reviewed-By: <name and email of someone who approved the patch>
 Last-Update: <YYYY-MM-DD>
 
---- nginx-1.10.1-12.orig/auto/modules
-+++ nginx-1.10.1-12/auto/modules
-@@ -944,9 +944,12 @@ if [ $MAIL != NO ]; then
- 
-     if [ $MAIL_SMTP = YES ]; then
-         ngx_module_name=ngx_mail_smtp_module
--        ngx_module_deps=src/mail/ngx_mail_smtp_module.h
-+        ngx_module_deps="src/mail/ngx_mail_smtp_module.h \
-+                        src/mail/ngx_mail_xmpp_module.h"
-         ngx_module_srcs="src/mail/ngx_mail_smtp_module.c \
--                         src/mail/ngx_mail_smtp_handler.c"
-+                         src/mail/ngx_mail_smtp_handler.c \
-+                         src/mail/ngx_mail_xmpp_module.c \
-+                         src/mail/ngx_mail_xmpp_handler.c"
- 
+--- nginx-1.10.1-13.orig/auto/modules
++++ nginx-1.10.1-13/auto/modules
+@@ -951,6 +951,15 @@ if [ $MAIL != NO ]; then
          . auto/module
      fi
---- nginx-1.10.1-12.orig/auto/options
-+++ nginx-1.10.1-12/auto/options
-@@ -472,8 +472,8 @@ cat << END
+ 
++    if [ $MAIL_XMPP = YES ]; then
++        ngx_module_name="ngx_mail_xmpp_module"
++        ngx_module_deps="src/mail/ngx_mail_xmpp_module.h"
++        ngx_module_srcs="src/mail/ngx_mail_xmpp_module.c \
++                         src/mail/ngx_mail_xmpp_handler.c"
++
++        . auto/module
++    fi
++
+     ngx_module_name=ngx_mail_auth_http_module
+     ngx_module_deps=
+     ngx_module_srcs=src/mail/ngx_mail_auth_http_module.c
+--- nginx-1.10.1-13.orig/auto/options
++++ nginx-1.10.1-13/auto/options
+@@ -112,6 +112,7 @@ MAIL_SSL=NO
+ MAIL_POP3=YES
+ MAIL_IMAP=YES
+ MAIL_SMTP=YES
++MAIL_XMPP=YES
+ 
+ STREAM=NO
+ STREAM_SSL=NO
+@@ -297,6 +298,7 @@ use the \"--with-mail_ssl_module\" optio
+         --without-mail_pop3_module)      MAIL_POP3=NO               ;;
+         --without-mail_imap_module)      MAIL_IMAP=NO               ;;
+         --without-mail_smtp_module)      MAIL_SMTP=NO               ;;
++        --without-mail_xmpp_module)      MAIL_XMPP=NO               ;;
+ 
+         --with-stream)                   STREAM=YES                 ;;
+         --with-stream=dynamic)           STREAM=DYNAMIC             ;;
+@@ -472,8 +474,8 @@ cat << END
    --without-http                     disable HTTP server
    --without-http-cache               disable HTTP cache
  
