@@ -1,3 +1,9 @@
+nginx (1.10.1-15-ppa7~xenial) xenial; urgency=medium
+
+  * Modules upstream update.
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Sat, 03 Sep 2016 13:49:45 +0000
+
 nginx (1.10.1-14-ppa7~xenial) xenial; urgency=high
 
   * XMMP backport hack fix. nginx-mail module with xmpp supported tested.
