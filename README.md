@@ -25,7 +25,7 @@
 - http_geoip module
 - http_perl module
 - ngx_mail module with [xmmp patch](https://github.com/cryptofuture/nginx-hda-bundle/blob/master/debian/patches/) backported from [nginx-xmpp](https://github.com/robn/nginx-xmpp) (linked with mail_ssl)
-- ngx_stream module (linked with stream_ssl)
+- ngx_stream module (linked with stream_ssl), and stream_ssl_preread since 1.11.5.
 - ngx_http_js module 
 
   >  ngx_https_js upstream version broken now, version from previous package used in ppa.
@@ -55,12 +55,14 @@ Add the following to the top of /etc/nginx/nginx.conf (for example after pid) an
 ```bash
 load_module modules/ndk_http_module.so;
 load_module modules/ngx_http_geoip_module.so;
+load_module modules/ngx_stream_geoip_module.so;
 load_module modules/ngx_http_headers_more_filter_module.so;
 load_module modules/ngx_http_image_filter_module.so;
 load_module modules/ngx_http_length_hiding_filter_module.so;
 load_module modules/ngx_http_lua_module.so;
 load_module modules/ngx_http_naxsi_module.so;
-load_module modules/ngx_http_njs_filter_module.so;
+load_module modules/ngx_http_js_module.so;
+load_module modules/ngx_stream_js_module.so;
 load_module modules/ngx_pagespeed.so;
 load_module modules/ngx_http_perl_module.so;
 load_module modules/ngx_stream_module.so;
@@ -91,6 +93,9 @@ sudo apt-add-repository ppa:hda-me/nginx-stable
 sudo apt-get update
 sudo apt-get install nginx nginx-module-name-you-wish
 ```
+
+#### Why you switched from stable to mainline builds
+Nginx mainline builds more stable now, and its easier to receive news about new mainline release, even before source is available on nginx.org from nginx mailing list. Stable nginx versions releases became even less frequent, and a lot fixes not imported in stable version, only critical and secure fixes. Main reason I used stable version before, was lifecycle and modules support. But since most 3-rd party modules are dynamic now, is not crucial even if some module will break.
 
 #### Donation
 Bitcoin : 1N5czHaoSLukFSTq2ZJujaWGjkmBxv2dT9
