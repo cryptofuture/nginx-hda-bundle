@@ -94,7 +94,7 @@ sudo apt-get update
 sudo apt-get install nginx nginx-module-name-you-wish
 ```
 
-#### Why you switched from stable to mainline builds
+#### Why you switched from stable to mainline builds?
 Nginx mainline builds more stable now, and its easier to receive news about new mainline release, even before source is available on nginx.org from nginx mailing list. Stable nginx versions releases became even less frequent, and a lot fixes not imported in stable version, only critical and secure fixes. Main reason I used stable version before, was lifecycle and modules support. But since most 3-rd party modules are dynamic now, is not crucial even if some module will break.
 
 #### Donation
