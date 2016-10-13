@@ -58,6 +58,8 @@ COMMON_CONFIGURE_ARGS := \
 	--with-http_perl_module=dynamic \
 	--with-stream=dynamic \
 	--with-stream_ssl_module \
+	--with-stream_ssl_preread_module \
+	--with-stream_geoip_module=dynamic \
 	--with-mail=dynamic \
 	--with-mail_ssl_module \
 	--add-module=$(CURDIR)/debian/extra/ngx_postgres \
@@ -76,7 +78,6 @@ COMMON_CONFIGURE_ARGS := \
 	--with-threads \
 	--with-http_slice_module \
 	--with-file-aio \
-	--with-ipv6 \
 	$(WITH_HTTP2) \
 	--with-cc-opt="$(CFLAGS)" \
 	--with-ld-opt="$(LDFLAGS)"
@@ -100,6 +101,8 @@ override_dh_auto_build:
 	mv objs/ngx_stream_module.so objs/ngx_stream_module-debug.so
 	mv objs/ngx_mail_module.so objs/ngx_mail_module-debug.so
 	mv objs/ngx_http_js_module.so objs/ngx_http_js_module-debug.so
+	mv objs/ngx_stream_js_module.so objs/ngx_stream_js_module-debug.so
+	mv objs/ngx_stream_geoip_module.so objs/ngx_stream_geoip_module-debug.so
 	mv objs/ngx_pagespeed.so objs/ngx_pagespeed-debug.so
 	mv objs/ngx_http_headers_more_filter_module.so objs/ngx_http_headers_more_filter_module-debug.so
 	mv objs/ngx_http_lua_module.so objs/ngx_http_lua_module-debug.so
@@ -116,7 +119,7 @@ override_dh_auto_build:
 	dh_auto_build
 
 configure_debug:
-	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.11.33.3.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
+	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.11.33.4.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
 	CFLAGS="" ./configure $(COMMON_CONFIGURE_ARGS) \
 		--with-debug
 

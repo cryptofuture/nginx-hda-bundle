@@ -53,8 +53,8 @@ Package: nginx-module-geoip
 Architecture: any
 Priority: extra
 Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
-Description: geoip module
- This package contains dynamic geoip module for nginx.
+Description: geoip modules
+ This package contains dynamic geoip modules for nginx.
 
 Package: nginx-module-perl
 Architecture: any
@@ -160,8 +160,3 @@ Priority: extra
 Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version}), libbrotli
 Description: Brotli Module
  This package contains brotli module for nginx.
- 
- 
-
-
-

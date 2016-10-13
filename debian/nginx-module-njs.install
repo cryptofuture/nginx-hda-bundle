@@ -1,2 +1,4 @@
 objs/ngx_http_js_module.so usr/lib/nginx/modules
 objs/ngx_http_js_module-debug.so usr/lib/nginx/modules
+objs/ngx_stream_js_module.so usr/lib/nginx/modules
+objs/ngx_stream_js_module-debug.so usr/lib/nginx/modules

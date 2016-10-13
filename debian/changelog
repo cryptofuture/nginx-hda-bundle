@@ -1,3 +1,13 @@
+nginx (1.11.5-1-ppa7~xenial) xenial; urgency=medium
+
+  * Switch to nginx mainline.
+  * stream_ssl_preread_module.
+  * njs module includes ngx_stream_js_module as part.
+  * geoip module includes ngx_stream_geoip as part.
+  * Modules upstream update.
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Wed, 12 Oct 2016 18:15:43 +0000
+
 nginx (1.10.1-15-ppa7~xenial) xenial; urgency=medium
 
   * Modules upstream update.

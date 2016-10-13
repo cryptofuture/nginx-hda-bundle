@@ -5,13 +5,14 @@ case "$1" in
         cat <<BANNER
 ----------------------------------------------------------------------
 
-The nJScript dynamic module for nginx has been installed.
-To enable this module, add the following to /etc/nginx/nginx.conf
+The nJScript dynamic modules for nginx have been installed.
+To enable those modules, add the following to /etc/nginx/nginx.conf
 and reload nginx:
 
-    load_module modules/ngx_http_njs_filter_module.so;
+    load_module modules/ngx_http_js_module.so;
+    load_module modules/ngx_stream_js_module.so;
 
-Please refer to the module documentation for further details:
+Please refer to the modules documentation for further details:
 https://www.nginx.com/resources/wiki/nginScript/
 
 ----------------------------------------------------------------------
