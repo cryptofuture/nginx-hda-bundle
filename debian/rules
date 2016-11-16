@@ -1,7 +1,8 @@
 #!/usr/bin/make -f
 
 #export DH_VERBOSE=1
-CFLAGS ?= $(shell dpkg-buildflags --get CFLAGS)
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all,-pie
+#CFLAGS ?= $(shell dpkg-buildflags --get CFLAGS)
 LDFLAGS ?= $(shell dpkg-buildflags --get LDFLAGS)
 WITH_HTTP2 := $(shell printf \
 	"Source: nginx\nBuild-Depends: libssl-dev (>= 1.0.1)\n" | \
@@ -79,7 +80,7 @@ COMMON_CONFIGURE_ARGS := \
 	--with-http_slice_module \
 	--with-file-aio \
 	$(WITH_HTTP2) \
-	--with-cc-opt="$(CFLAGS)" \
+	--with-cc-opt="-g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wno-deprecated-declarations" \
 	--with-ld-opt="$(LDFLAGS)"
 
 %:
