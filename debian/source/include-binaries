@@ -1,1 +1,3 @@
-debian/extra/ngx_pagespeed/1.11.33.4.tar.gz
+debian/extra/ngx_pagespeed/1.12.34.1-x64.tar.gz
+debian/extra/ngx_pagespeed/1.12.34.1-ia32.tar.gz
+debian/extra/ngx_brotli/brotli.tar.gz
