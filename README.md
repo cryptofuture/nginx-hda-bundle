@@ -71,8 +71,7 @@ load_module modules/ngx_http_xslt_filter_module.so;
 load_module modules/ngx_http_brotli_filter_module.so;
 # ngx_brotli static module - used to serve pre-compressed files.
 # Both ngx_brotli modules could be used separately, but part of nginx-module-brotli package
-# You possibly don't need libbrotli for ngx_brotli, dependency removed 
-since nginx 1.11.7, but libbrotli package will be saved in repository
+# You possibly don't need libbrotli for ngx_brotli, dependency removed since nginx 1.11.7, but libbrotli package will be saved in repository
 load_module modules/ngx_http_brotli_static_module.so;
 load_module modules/ngx_postgres_module.so;
 ```
