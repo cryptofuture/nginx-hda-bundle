@@ -1,10 +1,9 @@
 #!/usr/bin/make -f
-
 #export DH_VERBOSE=1
 export DEB_BUILD_MAINT_OPTIONS=hardening=+all,-pie
-#CFLAGS ?= $(shell dpkg-buildflags --get CFLAGS)
-# We use just `--with-cc-opt="$(CFLAGS)" \` with trusty since need `-Wno-deprecated-declarations` only with brotli on xenial
+CFLAGS ?= $(shell dpkg-buildflags --get CFLAGS)
 LDFLAGS ?= $(shell dpkg-buildflags --get LDFLAGS)
+TESTARCH := $(shell uname -m)
 WITH_HTTP2 := $(shell printf \
 	"Source: nginx\nBuild-Depends: libssl-dev (>= 1.0.1)\n" | \
 	dpkg-checkbuilddeps - >/dev/null 2>&1 && \
@@ -27,7 +26,8 @@ PKGS = nginx nginx-dbg \
 	nginx-module-upstream-order \
 	nginx-module-rds-json \
 	nginx-module-testcookie \
-	nginx-module-brotli
+	nginx-module-brotli \
+	nginx-module-postgres
 COMMON_CONFIGURE_ARGS := \
 	--prefix=/etc/nginx \
 	--sbin-path=/usr/sbin/nginx \
@@ -64,7 +64,6 @@ COMMON_CONFIGURE_ARGS := \
 	--with-stream_geoip_module=dynamic \
 	--with-mail=dynamic \
 	--with-mail_ssl_module \
-	--add-module=$(CURDIR)/debian/extra/ngx_postgres \
 	--add-dynamic-module=debian/extra/njs/nginx \
 	--add-dynamic-module=debian/extra/ngx_pagespeed \
 	--add-dynamic-module=debian/extra/headers-more-nginx-module \
@@ -77,11 +76,12 @@ COMMON_CONFIGURE_ARGS := \
 	--add-dynamic-module=debian/extra/rds-json-nginx-module \
 	--add-dynamic-module=debian/extra/testcookie-nginx-module \
 	--add-dynamic-module=debian/extra/ngx_brotli \
+	--add-dynamic-module=debian/extra/ngx_postgres \
 	--with-threads \
 	--with-http_slice_module \
 	--with-file-aio \
 	$(WITH_HTTP2) \
-	--with-cc-opt="-g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wno-deprecated-declarations" \
+	--with-cc-opt="$(CFLAGS)" \
 	--with-ld-opt="$(LDFLAGS)"
 
 %:
@@ -117,11 +117,24 @@ override_dh_auto_build:
 	mv objs/ngx_http_testcookie_access_module.so objs/ngx_http_testcookie_access_module-debug.so
 	mv objs/ngx_http_brotli_filter_module.so objs/ngx_http_brotli_filter_module-debug.so
 	mv objs/ngx_http_brotli_static_module.so objs/ngx_http_brotli_static_module-debug.so
+	mv objs/ngx_postgres_module.so objs/ngx_postgres_module-debug.so
 	CFLAGS="" ./configure $(COMMON_CONFIGURE_ARGS)
 	dh_auto_build
 
 configure_debug:
-	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.11.33.4.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
+ifeq ($(TESTARCH), x86_64)
+	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.12.34.1-x64.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
+endif
+ifeq ($(TESTARCH), amd64)
+	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.12.34.1-x64.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
+endif
+ifeq ($(TESTARCH), i686)
+	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.12.34.1-ia32.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
+endif
+ifeq ($(TESTARCH), i386)
+	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.12.34.1-ia32.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
+endif
+	tar xfz $(CURDIR)/debian/extra/ngx_brotli/brotli.tar.gz -C $(CURDIR)/debian/extra/ngx_brotli/deps/brotli/ --strip-components=1
 	CFLAGS="" ./configure $(COMMON_CONFIGURE_ARGS) \
 		--with-debug
 
