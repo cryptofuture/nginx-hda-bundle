@@ -14,12 +14,9 @@
 - [ngx_brotli](https://github.com/google/ngx_brotli) :
      - ngx_brotli filter module
      - ngx_brotli static module
-  2. Static modules  
 - [ngx_postgres module](https://github.com/FRiCKLE/ngx_postgres) with pull 24 patch
 
-  > Note: I hope it will be dynamic soon too.
-
-  3. Base dynamic modules
+  2. Base dynamic modules
 - http_xslt module
 - http_image_filter module
 - http_geoip module
@@ -28,9 +25,7 @@
 - ngx_stream module (linked with stream_ssl), and stream_ssl_preread since 1.11.5.
 - ngx_http_js module 
 
-  >  ngx_https_js upstream version broken now, version from previous package used in ppa.
-
-  4. Static modules
+  3. Static modules
 - http_ssl module
 - http_realip module
 - http_addition module
@@ -76,7 +71,10 @@ load_module modules/ngx_http_xslt_filter_module.so;
 load_module modules/ngx_http_brotli_filter_module.so;
 # ngx_brotli static module - used to serve pre-compressed files.
 # Both ngx_brotli modules could be used separately, but part of nginx-module-brotli package
+# You possibly don't need libbrotli for ngx_brotli, dependency removed 
+since nginx 1.11.7, but libbrotli package will be saved in repository
 load_module modules/ngx_http_brotli_static_module.so;
+load_module modules/ngx_postgres_module.so;
 ```
   > Note: Use only modules you need to use. With dynamic modules this is pretty easy.
   
@@ -93,8 +91,11 @@ sudo apt-add-repository ppa:hda-me/nginx-stable
 sudo apt-get update
 sudo apt-get install nginx nginx-module-name-you-wish
 ```
+#### Build hacks
+Change `buildtype` for Release in ngx_pagespeed config file, to use master version.
 
-#### Why you switched from stable to mainline builds?
+
+#### Q: Why you switched from stable to mainline builds?
 Nginx mainline builds more stable now, and its easier to receive news about new mainline release, even before source is available on nginx.org from nginx mailing list. Stable nginx versions releases became even less frequent, and a lot fixes not imported in stable version, only critical and secure fixes. Main reason I used stable version before, was lifecycle and modules support. But since most 3-rd party modules are dynamic now, is not crucial even if some module will break.
 
 #### Donation
