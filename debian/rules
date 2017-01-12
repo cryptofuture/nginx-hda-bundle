@@ -123,18 +123,18 @@ override_dh_auto_build:
 
 configure_debug:
 ifeq ($(TESTARCH), x86_64)
-	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.12.34.1-x64.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
+	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.12.34.2-x64.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
 endif
 ifeq ($(TESTARCH), amd64)
-	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.12.34.1-x64.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
+	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.12.34.2-x64.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
 endif
 ifeq ($(TESTARCH), i686)
-	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.12.34.1-ia32.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
+	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.12.34.2-ia32.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
 endif
 ifeq ($(TESTARCH), i386)
-	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.12.34.1-ia32.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
+	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.12.34.2-ia32.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
 endif
-	tar xfz $(CURDIR)/debian/extra/ngx_brotli/brotli.tar.gz -C $(CURDIR)/debian/extra/ngx_brotli/deps/brotli/ --strip-components=1
+	tar xfz $(CURDIR)/debian/extra/ngx_brotli/brotli-master.tar.gz -C $(CURDIR)/debian/extra/ngx_brotli/deps/brotli/ --strip-components=1
 	CFLAGS="" ./configure $(COMMON_CONFIGURE_ARGS) \
 		--with-debug
 
