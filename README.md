@@ -15,7 +15,14 @@
      - ngx_brotli filter module
      - ngx_brotli static module
 - [ngx_postgres module](https://github.com/FRiCKLE/ngx_postgres) with pull 24 patch
-
+- [nchan](https://github.com/slact/nchan)
+- [ngx-http-auth-pam](https://github.com/sto/ngx_http_auth_pam_module)
+- [echo-nginx-module](https://github.com/openresty/echo-nginx-module)
+- [nginx-upstream-fair](https://github.com/gnosek/nginx-upstream-fair)
+- [ngx_cache_purge](https://github.com/FRiCKLE/ngx_cache_purge)
+- [ngx-fancyindex](https://github.com/aperezdc/ngx-fancyindex/)
+- [nginx-upload-progress](https://github.com/masterzen/nginx-upload-progress-module)
+- [ngx_http_substitutions_filter_module](https://github.com/yaoweibin/ngx_http_substitutions_filter_module)
   2. Base dynamic modules
 - http_xslt module
 - http_image_filter module
@@ -38,7 +45,7 @@
 - http_auth_request module
 - http_slice module
 
-Modules removed: http_dav, http_flv, http_mp4
+Modules removed: **http_dav**, http_flv, http_mp4
 
 #### Optimizations made
 * Server version changed to cloudflare-nginx
@@ -74,6 +81,14 @@ load_module modules/ngx_http_brotli_filter_module.so;
 # You possibly don't need libbrotli for ngx_brotli, dependency removed since nginx 1.11.7, but libbrotli package will be saved in repository
 load_module modules/ngx_http_brotli_static_module.so;
 load_module modules/ngx_postgres_module.so;
+load_module modules/ngx_nchan_module.so;
+load_module modules/ngx_http_auth_pam_module.so;
+load_module modules/ngx_http_echo_module.so;
+load_module ngx_http_upstream_fair_module.so;
+load_module modules/ngx_http_cache_purge_module.so;
+load_module modules/ngx_http_fancyindex_module.so;
+load_module ngx_http_uploadprogress_module.so;
+load_module modules/ngx_http_subs_filter_module.so;
 ```
   > Note: Use only modules you need to use. With dynamic modules this is pretty easy.
   
@@ -92,7 +107,6 @@ sudo apt-get install nginx nginx-module-name-you-wish
 ```
 #### Build hacks
 Change `buildtype` for Release in ngx_pagespeed config file, to use master version.
-
 
 #### Q: Why you switched from stable to mainline builds?
 Nginx mainline builds more stable now, and its easier to receive news about new mainline release, even before source is available on nginx.org from nginx mailing list. Stable nginx versions releases became even less frequent, and a lot fixes not imported in stable version, only critical and secure fixes. Main reason I used stable version before, was lifecycle and modules support. But since most 3-rd party modules are dynamic now, is not crucial even if some module will break.
