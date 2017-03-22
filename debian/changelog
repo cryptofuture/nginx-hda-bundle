@@ -1,3 +1,12 @@
+nginx (1.11.11-1-ppa7~xenial) xenial; urgency=medium
+
+  * Version update
+  * Fix possible conflicts for zesty and newer Ubuntu versions
+  * nginx-module-nchan, nginx-module-http-auth-pam, nginx-module-http-echo, nginx-module-upstream-fair, nginx-module-cache-purge, nginx-module-fancyindex, nginx-module-upload-progress, nginx-module-http-subs-filter
+  * Clear patches
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Wed, 22 Mar 2017 06:14:40 +0000
+
 nginx (1.11.8-1-ppa7~xenial) xenial; urgency=medium
 
   * Version update

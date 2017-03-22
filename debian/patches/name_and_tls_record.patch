@@ -1,31 +1,5 @@
-Description: <short summary of the patch>
- TODO: Put a short summary on the line above and replace this paragraph
- with a longer explanation of this change. Complete the meta-information
- with other relevant fields (see below for details). To make it easier, the
- information below has been extracted from the changelog. Adjust it or drop
- it.
- .
- nginx (1.10.0-1-ppa7~xenail) xenial; urgency=medium
- .
-   * TLS record patch fixed a bit.
-   * Upstream update.
-   * Dynamic modules.
-   * Upstream order module.
+Description: Change server name and tls record size
 Author: hda_launchpad (hda_launchpad) <admin@hda.me>
-
----
-The information above should follow the Patch Tagging Guidelines, please
-checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
-are templates for supplementary fields that you might want to add:
-
-Origin: <vendor|upstream|other>, <url of original patch>
-Bug: <url in upstream bugtracker>
-Bug-Debian: https://bugs.debian.org/<bugnumber>
-Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
-Forwarded: <no|not-needed|url proving that it has been forwarded>
-Reviewed-By: <name and email of someone who approved the patch>
-Last-Update: <YYYY-MM-DD>
-
 --- nginx-1.10.0-1.orig/src/event/ngx_event_openssl.c
 +++ nginx-1.10.0-1/src/event/ngx_event_openssl.c
 @@ -740,7 +740,7 @@ ngx_ssl_info_callback(const ngx_ssl_conn
@@ -48,16 +22,19 @@ Last-Update: <YYYY-MM-DD>
  
  
  ngx_int_t ngx_ssl_init(ngx_log_t *log);
---- nginx-1.10.0-1.orig/src/http/ngx_http_header_filter_module.c
-+++ nginx-1.10.0-1/src/http/ngx_http_header_filter_module.c
-@@ -46,8 +46,8 @@ ngx_module_t  ngx_http_header_filter_mod
+--- nginx-1.11.11-1.orig/src/http/ngx_http_header_filter_module.c
++++ nginx-1.11.11-1/src/http/ngx_http_header_filter_module.c
+@@ -46,9 +46,9 @@ ngx_module_t  ngx_http_header_filter_mod
  };
  
  
--static char ngx_http_server_string[] = "Server: nginx" CRLF;
--static char ngx_http_server_full_string[] = "Server: " NGINX_VER CRLF;
+-static u_char ngx_http_server_string[] = "Server: nginx" CRLF;
+-static u_char ngx_http_server_full_string[] = "Server: " NGINX_VER CRLF;
+-static u_char ngx_http_server_build_string[] = "Server: " NGINX_VER_BUILD CRLF;
 +static char ngx_http_server_string[] = "Server: cloudflare-nginx" CRLF;
 +static char ngx_http_server_full_string[] = "Server: cloudflare-nginx" CRLF;
++static u_char ngx_http_server_build_string[] = "Server: cloudflare-nginx" CRLF;
  
  
  static ngx_str_t ngx_http_status_lines[] = {
+
