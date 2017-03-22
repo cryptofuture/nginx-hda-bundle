@@ -84,10 +84,10 @@ load_module modules/ngx_postgres_module.so;
 load_module modules/ngx_nchan_module.so;
 load_module modules/ngx_http_auth_pam_module.so;
 load_module modules/ngx_http_echo_module.so;
-load_module ngx_http_upstream_fair_module.so;
+load_module modules/ngx_http_upstream_fair_module.so;
 load_module modules/ngx_http_cache_purge_module.so;
 load_module modules/ngx_http_fancyindex_module.so;
-load_module ngx_http_uploadprogress_module.so;
+load_module modules/ngx_http_uploadprogress_module.so;
 load_module modules/ngx_http_subs_filter_module.so;
 ```
   > Note: Use only modules you need to use. With dynamic modules this is pretty easy.
