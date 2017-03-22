@@ -14,11 +14,14 @@ Build-Depends: debhelper (>= 7.0.50~),
                zlib1g-dev,
                libluajit-5.1-dev,
                tar,
-               libpq-dev
+               libpq-dev,
+               libpam0g-dev
 Standards-Version: 3.9.1
 Homepage: http://nginx.org
 
 Package: nginx
+Conflicts: lib-nginx-mod-http-dav-ext
+Replaces: nginx-core, nginx-extras, nginx-full, nginx-light
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}, lsb-base, adduser
 Provides: httpd
@@ -35,6 +38,9 @@ Description: nginx debug symbols
  This package contains the debugging symbols for nginx.
 
 Package: nginx-module-xslt
+Provides:libnginx-mod-http-xslt-filter
+Conflicts: libnginx-mod-http-xslt-filter
+Replaces: libnginx-mod-http-xslt-filter
 Architecture: any
 Priority: extra
 Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
@@ -42,6 +48,9 @@ Description: xslt module
  This package contains dynamic xslt module for nginx.
 
 Package: nginx-module-image-filter
+Provides: libnginx-mod-http-image-filter
+Conflicts: libnginx-mod-http-image-filter
+Replaces: libnginx-mod-http-image-filter
 Architecture: any
 Priority: extra
 Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
@@ -49,6 +58,9 @@ Description: image filter module
  This package contains dynamic image filter module for nginx.
 
 Package: nginx-module-geoip
+Provides: libnginx-mod-http-geoip
+Conflicts: libnginx-mod-http-geoip
+Replaces: libnginx-mod-http-geoip
 Architecture: any
 Priority: extra
 Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
@@ -56,6 +68,9 @@ Description: geoip modules
  This package contains dynamic geoip modules for nginx.
 
 Package: nginx-module-perl
+Provides: libnginx-mod-http-perl
+Conflicts: libnginx-mod-http-perl
+Replaces: libnginx-mod-http-perl
 Architecture: any
 Priority: extra
 Depends: ${misc:Depends}, ${shlibs:Depends}, ${perl:Depends}, nginx (= ${source:Version})
@@ -63,6 +78,9 @@ Description: perl module
  This package contains dynamic perl module for nginx.
 
 Package: nginx-module-stream
+Provides: libnginx-mod-stream
+Conflicts: libnginx-mod-stream
+Replaces: libnginx-mod-stream
 Architecture: any
 Priority: extra
 Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
@@ -70,6 +88,9 @@ Description: stream module
  This package contains dynamic stream module for nginx.
 
 Package: nginx-module-mail
+Provides: libnginx-mod-mail
+Conflicts: libnginx-mod-mail
+Replaces: libnginx-mod-mail
 Architecture: any
 Priority: extra
 Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
@@ -91,6 +112,9 @@ Description: PageSpeed module
  This package contains dynamic pagespeed module for nginx.
 
 Package: nginx-module-http-headers-more
+Provides: libnginx-mod-http-headers-more-filter
+Conflicts: libnginx-mod-http-headers-more-filter
+Replaces: libnginx-mod-http-headers-more-filter
 Architecture: any
 Priority: extra
 Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
@@ -98,9 +122,12 @@ Description: http-headers-more module
  This package contains dynamic http-headers-more module for nginx.
 
 Package: nginx-module-lua
+Provides: libnginx-mod-http-lua
+Conflicts: libnginx-mod-http-lua
+Replaces: libnginx-mod-http-lua
 Architecture: any
 Priority: extra
-Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Depends: nginx-module-devel-kit (= ${binary:Version}), ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
 Description: Lua module
  This package contains dynamic lua module for nginx.
 
@@ -126,6 +153,9 @@ Description: Session Binding Proxy
  This package contains dynamic session-binding-proxy module for nginx.
 
 Package: nginx-module-devel-kit
+Provides: libnginx-mod-http-ndk
+Conflicts: libnginx-mod-http-ndk
+Replaces: libnginx-mod-http-ndk
 Architecture: any
 Priority: extra
 Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
@@ -166,3 +196,95 @@ Priority: extra
 Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
 Description: Postgres Module
  This package contains ngx_postgres module for nginx.
+
+Package: nginx-module-nchan
+Provides: libnginx-mod-nchan
+Conflicts: libnginx-mod-nchan
+Replaces: libnginx-mod-nchan
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: Fast, flexible pub/sub server for Nginx
+ Nchan is a scalable, flexible pub/sub server for the modern web, It can be
+ configured as a standalone server, or as a shim between your application and
+ tens, thousands, or millions of live subscribers. It can buffer messages in
+ memory, on-disk, or via Redis. All connections are handled asynchronously and
+ distributed among any number of worker processes. It can also scale to many
+ nginx server instances with Redis.
+ 
+Package: nginx-module-http-auth-pam
+Provides: libnginx-mod-http-auth-pam
+Conflicts: libnginx-mod-http-auth-pam
+Replaces: libnginx-mod-http-auth-pam
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: PAM authentication module for Nginx
+ The nginx_http_auth_pam module enables authentication using PAM.
+ .
+ The module uses PAM as a backend for simple http authentication. It
+ also allows setting the pam service name to allow more fine grained control.
+ 
+Package: nginx-module-http-echo
+Provides: libnginx-mod-http-echo
+Conflicts: libnginx-mod-http-echo
+Replaces: libnginx-mod-http-echo
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: Bring echo and more shell style goodies to Nginx
+ Echo module wraps lots of Nginx internal APIs for streaming input and output,
+ parallel/sequential subrequests, timers and sleeping, as well as various meta
+ data accessing.
+ 
+Package: nginx-module-upstream-fair
+Provides: libnginx-mod-http-upstream-fair
+Conflicts: libnginx-mod-http-upstream-fair
+Replaces: libnginx-mod-http-upstream-fair
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: Nginx Upstream Fair Proxy Load Balancer
+ The Nginx fair proxy balancer enhances the standard round-robin load balancer
+ provided with Nginx so that it tracks busy backend servers and adjusts
+ balancing accordingly.
+
+Package: nginx-module-cache-purge
+Provides: libnginx-mod-http-cache-purge
+Conflicts: libnginx-mod-http-cache-purge
+Replaces: libnginx-mod-http-cache-purge
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: Purge content from Nginx caches
+ Cache Purge module adds purging capabilities to Nginx. It allows purging
+ content from caches used by all of Nginx proxy modules, like FastCGI, Proxy,
+ SCGI and uWSGI.
+
+Package: nginx-module-fancyindex
+Provides: libnginx-mod-http-fancyindex
+Conflicts: libnginx-mod-http-fancyindex
+Replaces: libnginx-mod-http-fancyindex
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: Fancy indexes module for the Nginx
+ The Fancy Index module makes possible the generation of file listings, like
+ the built-in autoindex module does, but adding a touch of style by introducing
+ ways to customize the result.
+
+Package: nginx-module-upload-progress
+Provides: libnginx-mod-http-uploadprogress
+Conflicts: libnginx-mod-http-uploadprogress
+Replaces: libnginx-mod-http-uploadprogress
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: Upload progress system for Nginx
+ Upload progress module is an implementation of an upload progress system, that
+ monitors RFC1867 POST uploads as they are transmitted to upstream servers.
+
+Package: nginx-module-http-subs-filter
+Provides: libnginx-mod-http-subs-filter
+Conflicts: libnginx-mod-http-subs-filter
+Replaces: libnginx-mod-http-subs-filter
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: Substitution filter module for Nginx
+ Subsitution Nginx module can do both regular expression and fixed string
+ substitutions on response bodies. The module is quite different from Nginx's
+ native Substitution module. It scans the output chains buffer and
+ matches string line by line, just like Apache's mod_substitute.
