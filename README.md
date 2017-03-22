@@ -1,5 +1,4 @@
 # nginx-hda-bundle
-#### Modules included 
 
  ## Dynamic modules 
 - [headers-more-nginx](https://github.com/openresty/headers-more-nginx-module)
