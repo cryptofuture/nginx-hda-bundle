@@ -3,7 +3,7 @@
 	url = https://github.com/openresty/headers-more-nginx-module
 [submodule "debian/extra/lua-nginx-module"]
 	path = debian/extra/lua-nginx-module
-	url = https://github.com/openresty/lua-nginx-module
+	url = https://github.com/cryptofuture/lua-nginx-module
 [submodule "debian/extra/naxsi"]
 	path = debian/extra/naxsi
 	url = https://github.com/cryptofuture/naxsi
@@ -47,7 +47,7 @@
 	url = https://github.com/sto/ngx_http_auth_pam_module
 [submodule "debian/extra/echo-nginx-module"]
 	path = debian/extra/echo-nginx-module
-	url = https://github.com/openresty/echo-nginx-module
+	url = https://github.com/cryptofuture/echo-nginx-module
 [submodule "debian/extra/nginx-upstream-fair"]
 	path = debian/extra/nginx-upstream-fair
 	url = https://github.com/chrislea/nginx-upstream-fair
