@@ -1,6 +1,7 @@
 # nginx-hda-bundle
 #### Modules included 
-  1. Dynamic modules
+
+ ## Dynamic modules 
 - [headers-more-nginx](https://github.com/openresty/headers-more-nginx-module)
 - [lua-nginx](https://github.com/openresty/lua-nginx-module)
 - [naxsi](https://github.com/nbs-system/naxsi) with pull 258 patch
@@ -24,7 +25,7 @@
 - [nginx-upload-progress](https://github.com/masterzen/nginx-upload-progress-module)
 - [ngx_http_substitutions_filter_module](https://github.com/yaoweibin/ngx_http_substitutions_filter_module)
 
-  2. Base dynamic modules
+## Base dynamic modules
 - http_xslt module
 - http_image_filter module
 - http_geoip module
@@ -33,7 +34,7 @@
 - ngx_stream module (linked with stream_ssl), and stream_ssl_preread since 1.11.5.
 - ngx_http_js module 
 
-  3. Static modules
+## Static modules
 - http_ssl module
 - http_realip module
 - http_addition module
