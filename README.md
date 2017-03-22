@@ -93,7 +93,7 @@ load_module modules/ngx_http_subs_filter_module.so;
 ```
   > Note: Use only modules you need to use. With dynamic modules this is pretty easy.
   
-#### I want to add my or someone nginx module to nginx-hda-bundle/ppa.
+#### I want to add my or someone's nginx module to nginx-hda-bundle/ppa.
 **Module should be dynamic!**  
 *Fast-way*: Pull request with changes, better if module will be as git submodule.  Don't forget to change rules file and create install rules for module.  
 *Slower way*: Create issue request with module description and link to module, and I'll do it myself in spare time.
