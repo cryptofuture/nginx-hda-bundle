@@ -1,3 +1,9 @@
+nginx (1.11.11-2-ppa7~xenial) xenial; urgency=low
+
+  * Fix misstype in modules preinst
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Wed, 22 Mar 2017 12:16:53 +0000
+
 nginx (1.11.11-1-ppa7~xenial) xenial; urgency=medium
 
   * Version update

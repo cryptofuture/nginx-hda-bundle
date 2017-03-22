@@ -23,6 +23,7 @@
 - [ngx-fancyindex](https://github.com/aperezdc/ngx-fancyindex/)
 - [nginx-upload-progress](https://github.com/masterzen/nginx-upload-progress-module)
 - [ngx_http_substitutions_filter_module](https://github.com/yaoweibin/ngx_http_substitutions_filter_module)
+
   2. Base dynamic modules
 - http_xslt module
 - http_image_filter module
