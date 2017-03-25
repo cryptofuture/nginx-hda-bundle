@@ -1,3 +1,9 @@
+nginx (1.11.12-1-ppa7~xenial) xenial; urgency=high
+
+  * Version update (CPU hog in nginx 1.11.11)
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Sat, 25 Mar 2017 05:47:59 +0000
+
 nginx (1.11.11-2-ppa7~xenial) xenial; urgency=low
 
   * Fix misstype in modules preinst
