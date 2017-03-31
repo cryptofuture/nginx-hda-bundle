@@ -21,7 +21,7 @@ Homepage: http://nginx.org
 
 Package: nginx
 Conflicts: lib-nginx-mod-http-dav-ext
-Replaces: nginx-core, nginx-extras, nginx-full, nginx-light
+Replaces: nginx-core, nginx-extras, nginx-full, nginx-light, nginx-common
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}, lsb-base, adduser
 Provides: httpd
