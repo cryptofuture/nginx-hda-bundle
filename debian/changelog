@@ -1,3 +1,11 @@
+nginx (1.11.12-2-ppa7~xenial) xenial; urgency=low
+
+  * Made from scratch config examples
+  * Fix package issue #5
+  * site-available, site-enabled by default
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Fri, 31 Mar 2017 16:12:32 +0000
+
 nginx (1.11.12-1-ppa7~xenial) xenial; urgency=high
 
   * Version update (CPU hog in nginx 1.11.11)

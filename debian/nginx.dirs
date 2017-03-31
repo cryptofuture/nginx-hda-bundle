@@ -1,7 +1,9 @@
 /usr/sbin
-/etc/nginx/conf.d
 /usr/lib/nginx/modules
 /usr/share/nginx
 /usr/share/nginx/html
 /var/cache/nginx
 /var/log/nginx
+/etc/nginx/sites-available
+/etc/nginx/sites-enabled
+/etc/nginx/ssl

@@ -189,12 +189,19 @@ override_dh_auto_install:
 	/usr/bin/install -m 644 conf/scgi_params debian/nginx/etc/nginx/
 	/usr/bin/install -m 644 conf/fastcgi_params debian/nginx/etc/nginx/
 	/usr/bin/install -m 644 conf/uwsgi_params debian/nginx/etc/nginx/
+	/usr/bin/install -m 644 debian/expires.conf debian/nginx/etc/nginx/
+	/usr/bin/install -m 644 debian/cloudflare-ip.rules debian/nginx/etc/nginx/
+	/usr/bin/install -m 644 debian/naxsi-in-location.rules debian/nginx/etc/nginx/
+	/usr/bin/install -m 644 debian/naxsi_core.rules debian/nginx/etc/nginx/
+	/usr/bin/install -m 644 debian/naxsi.rules debian/nginx/etc/nginx/
+	/usr/bin/install -m 644 debian/cloudflare-origin-pulls.rules debian/nginx/etc/nginx/
+	/usr/bin/install -m 400 debian/cloudflare-origin-pulls.crt debian/nginx/etc/nginx/ssl/
 	/usr/bin/install -m 644 html/index.html \
 		debian/nginx/usr/share/nginx/html/
 	/usr/bin/install -m 644 html/50x.html \
 		debian/nginx/usr/share/nginx/html/
 	/usr/bin/install -m 644 debian/nginx.vh.default.conf \
-		debian/nginx/etc/nginx/conf.d/default.conf
+		debian/nginx/etc/nginx/sites-available/default.conf
 	/usr/bin/install -m 755 objs/nginx  debian/nginx/usr/sbin/
 	/usr/bin/install -m 755 objs/nginx-debug  debian/nginx/usr/sbin/
 	cd debian/nginx/etc/nginx && /bin/ln -s \
