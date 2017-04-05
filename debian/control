@@ -288,3 +288,10 @@ Description: Substitution filter module for Nginx
  substitutions on response bodies. The module is quite different from Nginx's
  native Substitution module. It scans the output chains buffer and
  matches string line by line, just like Apache's mod_substitute.
+
+Package: nginx-module-graphite
+Recommends: nginx-module-lua
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: Graphite nginx module
+ nginx module for collecting location stats into Graphite.

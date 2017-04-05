@@ -35,7 +35,8 @@ PKGS = nginx nginx-dbg \
 	nginx-module-cache-purge \
 	nginx-module-fancyindex \
 	nginx-module-upload-progress \
-	nginx-module-http-subs-filter
+	nginx-module-http-subs-filter \
+	nginx-module-graphite
 COMMON_CONFIGURE_ARGS := \
 	--prefix=/etc/nginx \
 	--sbin-path=/usr/sbin/nginx \
@@ -93,6 +94,7 @@ COMMON_CONFIGURE_ARGS := \
 	--add-dynamic-module=debian/extra/ngx-fancyindex \
 	--add-dynamic-module=debian/extra/nginx-upload-progress-module \
 	--add-dynamic-module=debian/extra/ngx_http_substitutions_filter_module \
+	--add-dynamic-module=debian/extra/graphite-nginx-module \
 	--with-threads \
 	--with-http_slice_module \
 	--with-file-aio \
@@ -142,6 +144,7 @@ override_dh_auto_build:
 	mv objs/ngx_http_fancyindex_module.so objs/ngx_http_fancyindex_module-debug.so
 	mv objs/ngx_http_uploadprogress_module.so objs/ngx_http_uploadprogress_module-debug.so
 	mv objs/ngx_http_subs_filter_module.so objs/ngx_http_subs_filter_module-debug.so
+	mv objs/ngx_http_graphite_module.so objs/ngx_http_graphite_module-debug.so
 	CFLAGS="" ./configure $(COMMON_CONFIGURE_ARGS)
 	dh_auto_build
 
@@ -160,8 +163,8 @@ endif
 ifeq ($(TESTARCH), i386)
 	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.12.34.2-ia32.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
 endif
-# https://github.com/google/brotli/archive/master.tar.gz
-	tar xfz $(CURDIR)/debian/extra/ngx_brotli/brotli-master.tar.gz -C $(CURDIR)/debian/extra/ngx_brotli/deps/brotli/ --strip-components=1
+# Builds with brotli 8d3fdc1dfe9a89079c18fd6428f19cac3edf53de
+	tar xfz $(CURDIR)/debian/extra/ngx_brotli/brotli.tar.gz -C $(CURDIR)/debian/extra/ngx_brotli/deps/brotli/ --strip-components=1
 	CFLAGS="" ./configure $(COMMON_CONFIGURE_ARGS) \
 		--with-debug
 

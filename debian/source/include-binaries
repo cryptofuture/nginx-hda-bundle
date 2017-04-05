@@ -1,6 +1,6 @@
 debian/extra/ngx_pagespeed/1.12.34.2-x64.tar.gz
 debian/extra/ngx_pagespeed/1.12.34.2-ia32.tar.gz
-debian/extra/ngx_brotli/brotli-master.tar.gz
+debian/extra/ngx_brotli/brotli.tar.gz
 debian/extra/naxsi/t/fuzz/med-post-non-ascii
 debian/extra/naxsi/t/fuzz/mini-unknown-CT-post
 debian/extra/nchan/nchan_logo.png

@@ -4,7 +4,7 @@
 [submodule "debian/extra/lua-nginx-module"]
 	path = debian/extra/lua-nginx-module
 	url = https://github.com/cryptofuture/lua-nginx-module
-	branch = issue1016
+	branch = graphite
 [submodule "debian/extra/naxsi"]
 	path = debian/extra/naxsi
 	url = https://github.com/cryptofuture/naxsi
@@ -29,7 +29,7 @@
 [submodule "debian/extra/ngx_postgres"]
 	path = debian/extra/ngx_postgres
 	url = https://github.com/cryptofuture/ngx_postgres
-	branch = konstruxi_ngx_postgres
+	branch = pull24
 [submodule "debian/extra/rds-json-nginx-module"]
 	path = debian/extra/rds-json-nginx-module
 	url = https://github.com/cryptofuture/rds-json-nginx-module
@@ -65,3 +65,6 @@
 [submodule "debian/extra/ngx_http_substitutions_filter_module"]
 	path = debian/extra/ngx_http_substitutions_filter_module
 	url = https://github.com/cryptofuture/ngx_http_substitutions_filter_module
+[submodule "debian/extra/graphite-nginx-module"]
+	path = debian/extra/graphite-nginx-module
+	url = https://github.com/mailru/graphite-nginx-module

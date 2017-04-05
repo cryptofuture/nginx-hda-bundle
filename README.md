@@ -23,6 +23,7 @@
 - [ngx-fancyindex](https://github.com/aperezdc/ngx-fancyindex/)
 - [nginx-upload-progress](https://github.com/masterzen/nginx-upload-progress-module)
 - [ngx_http_substitutions_filter_module](https://github.com/yaoweibin/ngx_http_substitutions_filter_module)
+- [graphite-nginx-module](https://github.com/mailru/graphite-nginx-module/)
 
 ## Base dynamic modules
 - http_xslt module
@@ -31,7 +32,7 @@
 - http_perl module
 - ngx_mail module with [xmmp patch](https://github.com/cryptofuture/nginx-hda-bundle/blob/master/debian/patches/) backported from [nginx-xmpp](https://github.com/robn/nginx-xmpp) (linked with mail_ssl)
 - ngx_stream module (linked with stream_ssl), and stream_ssl_preread since 1.11.5.
-- ngx_http_js module 
+- ngx_http_js module
 
 ## Static modules
 - http_ssl module
@@ -90,6 +91,7 @@ load_module modules/ngx_http_cache_purge_module.so;
 load_module modules/ngx_http_fancyindex_module.so;
 load_module modules/ngx_http_uploadprogress_module.so;
 load_module modules/ngx_http_subs_filter_module.so;
+load_module modules/ngx_http_graphite_module.so;
 ```
   > Note: Use only modules you need to use. With dynamic modules this is pretty easy.
   
