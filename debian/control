@@ -295,3 +295,13 @@ Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
 Description: Graphite nginx module
  nginx module for collecting location stats into Graphite.
+
+Package: nginx-module-vts
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: Virtual host traffic status module
+ This is an Nginx module that provides access to virtual host status
+ information. It contains the current status such as servers, upstreams, caches.
+ This is similar to the live activity monitoring of nginx plus.
+ The built-in html is also taken from the demo page of old version.
+ 

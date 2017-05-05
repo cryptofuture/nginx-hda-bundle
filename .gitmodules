@@ -48,8 +48,7 @@
 	url = https://github.com/sto/ngx_http_auth_pam_module
 [submodule "debian/extra/echo-nginx-module"]
 	path = debian/extra/echo-nginx-module
-	url = https://github.com/cryptofuture/echo-nginx-module
-	branch = issue64
+	url = https://github.com/openresty/echo-nginx-module
 [submodule "debian/extra/nginx-upstream-fair"]
 	path = debian/extra/nginx-upstream-fair
 	url = https://github.com/cryptofuture/nginx-upstream-fair
@@ -68,3 +67,6 @@
 [submodule "debian/extra/graphite-nginx-module"]
 	path = debian/extra/graphite-nginx-module
 	url = https://github.com/mailru/graphite-nginx-module
+[submodule "debian/extra/nginx-module-vts"]
+	path = debian/extra/nginx-module-vts
+	url = https://github.com/vozlt/nginx-module-vts

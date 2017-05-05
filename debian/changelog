@@ -1,3 +1,10 @@
+nginx (1.13.0-1-ppa7~xenial) xenial; urgency=medium
+
+  * Version and modules updates
+  * nginx-module-vts
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Wed, 03 May 2017 14:44:24 +0000
+
 nginx (1.11.13-1-ppa7~xenial) xenial; urgency=medium
 
   * Version update

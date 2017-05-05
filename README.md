@@ -14,7 +14,7 @@
 - [ngx_brotli](https://github.com/google/ngx_brotli) :
      - ngx_brotli filter module
      - ngx_brotli static module
-- [ngx_postgres module](https://github.com/FRiCKLE/ngx_postgres) with pull 24 patch
+- [ngx_postgres module (commumity fork)](https://github.com/konstruxi/ngx_postgres) with pull 24 patch
 - [nchan](https://github.com/slact/nchan)
 - [ngx-http-auth-pam](https://github.com/sto/ngx_http_auth_pam_module)
 - [echo-nginx-module](https://github.com/openresty/echo-nginx-module)
@@ -24,6 +24,7 @@
 - [nginx-upload-progress](https://github.com/masterzen/nginx-upload-progress-module)
 - [ngx_http_substitutions_filter_module](https://github.com/yaoweibin/ngx_http_substitutions_filter_module)
 - [graphite-nginx-module](https://github.com/mailru/graphite-nginx-module/)
+- [nginx-module-vts](https://github.com/vozlt/nginx-module-vts)
 
 ## Base dynamic modules
 - http_xslt module
@@ -51,8 +52,7 @@ Modules removed: **http_dav**, http_flv, http_mp4
 
 #### Optimizations made
 * Server version changed to cloudflare-nginx
-* [TLS TTFB optimization](https://www.igvita.com/2013/12/16/optimizing-nginx-tls-time-to-first-byte/)
-  > Note: 1360 buffer size used instead 1400.
+* [Dynamic TLS Records patch](https://blog.cloudflare.com/optimizing-tls-over-tcp-to-reduce-latency/)
 
 #### How-to load dynamic modules?
 Add the following to the top of /etc/nginx/nginx.conf (for example after pid) and reload nginx.
@@ -92,6 +92,7 @@ load_module modules/ngx_http_fancyindex_module.so;
 load_module modules/ngx_http_uploadprogress_module.so;
 load_module modules/ngx_http_subs_filter_module.so;
 load_module modules/ngx_http_graphite_module.so;
+load module modules/ngx_http_vhost_traffic_status_module.so;
 ```
   > Note: Use only modules you need to use. With dynamic modules this is pretty easy.
   

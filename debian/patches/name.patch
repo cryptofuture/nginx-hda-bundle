@@ -1,0 +1,18 @@
+Description: Change server name to cloudflare-nginx
+Author: hda_launchpad (hda_launchpad) <admin@hda.me>
+--- nginx-1.11.11-1.orig/src/http/ngx_http_header_filter_module.c
++++ nginx-1.11.11-1/src/http/ngx_http_header_filter_module.c
+@@ -46,9 +46,9 @@ ngx_module_t  ngx_http_header_filter_mod
+ };
+ 
+ 
+-static u_char ngx_http_server_string[] = "Server: nginx" CRLF;
+-static u_char ngx_http_server_full_string[] = "Server: " NGINX_VER CRLF;
+-static u_char ngx_http_server_build_string[] = "Server: " NGINX_VER_BUILD CRLF;
++static u_char ngx_http_server_string[] = "Server: cloudflare-nginx" CRLF;
++static u_char ngx_http_server_full_string[] = "Server: cloudflare-nginx" CRLF;
++static u_char ngx_http_server_build_string[] = "Server: cloudflare-nginx" CRLF;
+ 
+ 
+ static ngx_str_t ngx_http_status_lines[] = {
+
