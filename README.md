@@ -14,7 +14,7 @@
 - [ngx_brotli](https://github.com/google/ngx_brotli) :
      - ngx_brotli filter module
      - ngx_brotli static module
-- [ngx_postgres module (commumity fork)](https://github.com/konstruxi/ngx_postgres) with pull 24 patch
+- [ngx_postgres module (commumity fork)](https://github.com/konstruxi/ngx_postgres) [in progress]
 - [nchan](https://github.com/slact/nchan)
 - [ngx-http-auth-pam](https://github.com/sto/ngx_http_auth_pam_module)
 - [echo-nginx-module](https://github.com/openresty/echo-nginx-module)
