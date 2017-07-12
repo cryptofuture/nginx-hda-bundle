@@ -37,7 +37,8 @@ PKGS = nginx nginx-dbg \
 	nginx-module-upload-progress \
 	nginx-module-http-subs-filter \
 	nginx-module-graphite \
-	nginx-module-vts
+	nginx-module-vts \
+	nginx-module-ct
 COMMON_CONFIGURE_ARGS := \
 	--prefix=/etc/nginx \
 	--sbin-path=/usr/sbin/nginx \
@@ -97,6 +98,7 @@ COMMON_CONFIGURE_ARGS := \
 	--add-dynamic-module=debian/extra/ngx_http_substitutions_filter_module \
 	--add-dynamic-module=debian/extra/graphite-nginx-module \
 	--add-dynamic-module=debian/extra/nginx-module-vts \
+	--add-dynamic-module=debian/extra/nginx-ct \
 	--with-threads \
 	--with-http_slice_module \
 	--with-file-aio \
@@ -148,6 +150,10 @@ override_dh_auto_build:
 	mv objs/ngx_http_subs_filter_module.so objs/ngx_http_subs_filter_module-debug.so
 	mv objs/ngx_http_graphite_module.so objs/ngx_http_graphite_module-debug.so
 	mv objs/ngx_http_vhost_traffic_status_module.so objs/ngx_http_vhost_traffic_status_module-debug.so
+	mv objs/ngx_ssl_ct_module.so objs/ngx_ssl_ct_module-debug.so
+	mv objs/ngx_http_ssl_ct_module.so objs/ngx_http_ssl_ct_module-debug.so
+	#mv objs/ngx_mail_ssl_ct_module.so objs/ngx_mail_ssl_ct_module-debug.so
+	#mv objs/ngx_stream_ssl_ct_module.so objs/ngx_stream_ssl_ct_module-debug.so
 	CFLAGS="" ./configure $(COMMON_CONFIGURE_ARGS)
 	dh_auto_build
 

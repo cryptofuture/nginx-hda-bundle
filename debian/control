@@ -304,4 +304,12 @@ Description: Virtual host traffic status module
  information. It contains the current status such as servers, upstreams, caches.
  This is similar to the live activity monitoring of nginx plus.
  The built-in html is also taken from the demo page of old version.
+
+Package: nginx-module-ct
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: Certificate Transparency module
+ This module adds support for the TLS signed_certificate_timestamp extension to 
+ nginx, which is one of the mechanisms supported by Google's Certificate 
+ Transparency project to deliver Signed Certificate Timestamps to TLS clients.
  

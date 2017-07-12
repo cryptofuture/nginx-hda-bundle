@@ -70,3 +70,6 @@
 [submodule "debian/extra/nginx-module-vts"]
 	path = debian/extra/nginx-module-vts
 	url = https://github.com/vozlt/nginx-module-vts
+[submodule "debian/extra/nginx-ct"]
+	path = debian/extra/nginx-ct
+	url = https://github.com/grahamedgecombe/nginx-ct

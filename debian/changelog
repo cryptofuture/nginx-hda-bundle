@@ -1,3 +1,10 @@
+nginx (1.13.3-1-ppa7~xenial) xenial; urgency=high
+
+  * Version and modules updates
+  * nginx-module-ct (initial, not workable with current openssl version even in zesty)
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Wed, 12 Jul 2017 12:48:47 +0000
+
 nginx (1.13.0-1-ppa7~xenial) xenial; urgency=medium
 
   * Version and modules updates
