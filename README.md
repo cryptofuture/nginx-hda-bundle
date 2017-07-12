@@ -25,6 +25,7 @@
 - [ngx_http_substitutions_filter_module](https://github.com/yaoweibin/ngx_http_substitutions_filter_module)
 - [graphite-nginx-module](https://github.com/mailru/graphite-nginx-module/)
 - [nginx-module-vts](https://github.com/vozlt/nginx-module-vts)
+- [nginx-module-ct](https://github.com/grahamedgecombe/nginx-ct) needs newer openssl versions, possible support on artful in future
 
 ## Base dynamic modules
 - http_xslt module
@@ -93,6 +94,8 @@ load_module modules/ngx_http_uploadprogress_module.so;
 load_module modules/ngx_http_subs_filter_module.so;
 load_module modules/ngx_http_graphite_module.so;
 load module modules/ngx_http_vhost_traffic_status_module.so;
+load_module modules/ngx_ssl_ct_module.so;    
+load_module modules/ngx_http_ssl_ct_module.so;
 ```
   > Note: Use only modules you need to use. With dynamic modules this is pretty easy.
   
