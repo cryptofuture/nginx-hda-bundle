@@ -1,3 +1,11 @@
+nginx (1.13.4-1-ppa7~xenial) xenial; urgency=medium
+
+  * ngx_http_mirror_module (build in nginx 1.13.4?)
+  * Version and modules updates
+  * https://github.com/pagespeed/ngx_pagespeed/pull/1453 temporary applied
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Sat, 12 Aug 2017 16:12:11 +0000
+
 nginx (1.13.3-1-ppa7~xenial) xenial; urgency=high
 
   * Version and modules updates

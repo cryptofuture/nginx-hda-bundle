@@ -35,6 +35,7 @@
 - ngx_mail module with [xmmp patch](https://github.com/cryptofuture/nginx-hda-bundle/blob/master/debian/patches/) backported from [nginx-xmpp](https://github.com/robn/nginx-xmpp) (linked with mail_ssl)
 - ngx_stream module (linked with stream_ssl), and stream_ssl_preread since 1.11.5.
 - ngx_http_js module
+- ngx_http_mirror_module (build in nginx, since 1.13.4)
 
 ## Static modules
 - http_ssl module
