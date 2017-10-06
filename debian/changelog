@@ -1,3 +1,9 @@
+nginx (1.13.5-2-ppa7~xenial) xenial; urgency=low
+
+  * Fix ngx_postgres for i386 build
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Fri, 06 Oct 2017 07:04:31 +0000
+
 nginx (1.13.5-1-ppa7~xenial) xenial; urgency=medium
 
   * Version and modules updates
