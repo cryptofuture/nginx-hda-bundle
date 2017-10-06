@@ -3,7 +3,7 @@
  ## Dynamic modules 
 - [headers-more-nginx](https://github.com/openresty/headers-more-nginx-module)
 - [lua-nginx](https://github.com/openresty/lua-nginx-module)
-- [naxsi](https://github.com/nbs-system/naxsi) with pull 258 patch
+- [naxsi](https://github.com/nbs-system/naxsi) with pull 388 patch (former 258)
 - [nginx-length-hiding-filter](https://github.com/nulab/nginx-length-hiding-filter-module)
 - [nginx_session_binding_proxy](https://github.com/wburgers/Session-Binding-Proxy)
 - [ngx_devel_kit](https://github.com/simpl/ngx_devel_kit)
@@ -14,7 +14,7 @@
 - [ngx_brotli](https://github.com/google/ngx_brotli) :
      - ngx_brotli filter module
      - ngx_brotli static module
-- [ngx_postgres module (commumity fork)](https://github.com/konstruxi/ngx_postgres) [in progress]
+- [ngx_postgres module (commumity fork)](https://github.com/konstruxi/ngx_postgres)
 - [nchan](https://github.com/slact/nchan)
 - [ngx-http-auth-pam](https://github.com/sto/ngx_http_auth_pam_module)
 - [echo-nginx-module](https://github.com/openresty/echo-nginx-module)

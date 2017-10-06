@@ -5,9 +5,6 @@
 	path = debian/extra/lua-nginx-module
 	url = https://github.com/cryptofuture/lua-nginx-module
 	branch = graphite
-[submodule "debian/extra/naxsi"]
-	path = debian/extra/naxsi
-	url = https://github.com/cryptofuture/naxsi
 [submodule "debian/extra/nginx-length-hiding-filter-module"]
 	path = debian/extra/nginx-length-hiding-filter-module
 	url = https://github.com/nulab/nginx-length-hiding-filter-module
@@ -23,13 +20,6 @@
 [submodule "debian/extra/ngx_pagespeed"]
 	path = debian/extra/ngx_pagespeed
 	url = https://github.com/pagespeed/ngx_pagespeed
-[submodule "debian/extra/testcookie-nginx-module"]
-	path = debian/extra/testcookie-nginx-module
-	url = https://github.com/kyprizel/testcookie-nginx-module
-[submodule "debian/extra/ngx_postgres"]
-	path = debian/extra/ngx_postgres
-	url = https://github.com/cryptofuture/ngx_postgres
-	branch = pull24
 [submodule "debian/extra/rds-json-nginx-module"]
 	path = debian/extra/rds-json-nginx-module
 	url = https://github.com/cryptofuture/rds-json-nginx-module
@@ -73,3 +63,12 @@
 [submodule "debian/extra/nginx-ct"]
 	path = debian/extra/nginx-ct
 	url = https://github.com/grahamedgecombe/nginx-ct
+[submodule "debian/extra/naxsi"]
+	path = debian/extra/naxsi
+	url = https://github.com/cryptofuture/naxsi
+[submodule "debian/extra/testcookie-nginx-module"]
+	path = debian/extra/testcookie-nginx-module
+	url = https://github.com/cryptofuture/testcookie-nginx-module
+[submodule "debian/extra/ngx_postgres"]
+	path = debian/extra/ngx_postgres
+	url = https://github.com/konstruxi/ngx_postgres

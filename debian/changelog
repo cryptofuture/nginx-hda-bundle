@@ -1,3 +1,12 @@
+nginx (1.13.5-1-ppa7~xenial) xenial; urgency=medium
+
+  * Version and modules updates
+  * Fix #9
+  * Finally switch to konstruxi/ngx_postgres
+  * artful build fixed
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Thu, 05 Oct 2017 12:31:51 +0000
+
 nginx (1.13.4-1-ppa7~xenial) xenial; urgency=medium
 
   * ngx_http_mirror_module (build in nginx 1.13.4?)
