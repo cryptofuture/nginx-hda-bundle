@@ -1,3 +1,10 @@
+nginx (1.13.6-1-ppa7~xenial) xenial; urgency=medium
+
+  * Version and modules updates
+  * nginx-cache-purge script (https://github.com/xnohat/nginx-cache-purge)
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Wed, 11 Oct 2017 09:59:43 +0000
+
 nginx (1.13.5-2-ppa7~xenial) xenial; urgency=low
 
   * Fix ngx_postgres for i386 build

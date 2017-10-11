@@ -208,6 +208,7 @@ override_dh_auto_install:
 	/usr/bin/install -m 644 debian/naxsi.rules debian/nginx/etc/nginx/
 	/usr/bin/install -m 644 debian/cloudflare-origin-pulls.rules debian/nginx/etc/nginx/
 	/usr/bin/install -m 400 debian/cloudflare-origin-pulls.crt debian/nginx/etc/nginx/ssl/
+	/usr/bin/install -m 755 debian/bin/nginx-cache-purge debian/nginx/usr/sbin/
 	/usr/bin/install -m 644 html/index.html \
 		debian/nginx/usr/share/nginx/html/
 	/usr/bin/install -m 644 html/50x.html \
