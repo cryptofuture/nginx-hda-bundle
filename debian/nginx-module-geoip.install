@@ -1,4 +1,0 @@
-objs/ngx_http_geoip_module.so usr/lib/nginx/modules
-objs/ngx_http_geoip_module-debug.so usr/lib/nginx/modules
-objs/ngx_stream_geoip_module.so usr/lib/nginx/modules
-objs/ngx_stream_geoip_module-debug.so usr/lib/nginx/modules

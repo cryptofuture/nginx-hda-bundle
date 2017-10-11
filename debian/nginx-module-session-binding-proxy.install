@@ -1,2 +1,0 @@
-objs/ngx_http_session_binding_proxy_module.so usr/lib/nginx/modules
-objs/ngx_http_session_binding_proxy_module-debug.so usr/lib/nginx/modules

@@ -1,2 +1,0 @@
-objs/ngx_postgres_module.so usr/lib/nginx/modules
-objs/ngx_postgres_module-debug.so usr/lib/nginx/modules

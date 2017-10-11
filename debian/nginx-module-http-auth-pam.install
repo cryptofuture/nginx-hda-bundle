@@ -1,2 +1,0 @@
-objs/ngx_http_auth_pam_module.so usr/lib/nginx/modules
-objs/ngx_http_auth_pam_module-debug.so usr/lib/nginx/modules

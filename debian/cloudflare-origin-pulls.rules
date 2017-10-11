@@ -1,3 +1,0 @@
-    # Actual doc at: https://support.cloudflare.com/hc/en-us/articles/204899617
-    ssl_client_certificate /etc/nginx/ssl/cloudflare-origin-pulls.crt;
-    ssl_verify_client on;

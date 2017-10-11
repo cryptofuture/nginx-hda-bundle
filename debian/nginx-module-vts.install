@@ -1,2 +1,0 @@
-objs/ngx_http_vhost_traffic_status_module.so usr/lib/nginx/modules
-objs/ngx_http_vhost_traffic_status_module-debug.so usr/lib/nginx/modules

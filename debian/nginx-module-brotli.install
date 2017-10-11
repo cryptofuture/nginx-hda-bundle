@@ -1,5 +1,0 @@
-objs/ngx_http_brotli_filter_module.so usr/lib/nginx/modules
-objs/ngx_http_brotli_filter_module-debug.so usr/lib/nginx/modules
-objs/ngx_http_brotli_static_module.so usr/lib/nginx/modules
-objs/ngx_http_brotli_static_module-debug.so usr/lib/nginx/modules
-
