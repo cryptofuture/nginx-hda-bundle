@@ -55,6 +55,7 @@ Modules removed: **http_dav**, http_flv, http_mp4
 #### Optimizations made
 * Server version changed to cloudflare-nginx
 * [Dynamic TLS Records patch](https://blog.cloudflare.com/optimizing-tls-over-tcp-to-reduce-latency/)
+* [nginx-cache-purge](https://github.com/xnohat/nginx-cache-purge/raw/master/nginx-cache-purge) script included
 
 #### How-to load dynamic modules?
 Add the following to the top of /etc/nginx/nginx.conf (for example after pid) and reload nginx.
