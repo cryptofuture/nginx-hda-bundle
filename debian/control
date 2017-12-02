@@ -15,7 +15,8 @@ Build-Depends: debhelper (>= 7.0.50~),
                libluajit-5.1-dev,
                tar,
                libpq-dev,
-               libpam0g-dev
+               libpam0g-dev,
+               uuid-dev
 Standards-Version: 3.9.1
 Homepage: http://nginx.org
 
@@ -304,4 +305,16 @@ Description: Virtual host traffic status module
  information. It contains the current status such as servers, upstreams, caches.
  This is similar to the live activity monitoring of nginx plus.
  The built-in html is also taken from the demo page of old version.
- 
+
+Package: nginx-module-rtmp
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: Media Streaming Server module
+ This module transforms nginx into Media Streaming Server.
+
+Package: nginx-module-ts
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: NGINX MPEG-TS Live module
+ This module receives MPEG-TS over HTTP, produces and manages live HLS_ 
+ and MPEG-DASH_.
