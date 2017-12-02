@@ -15,7 +15,8 @@ Build-Depends: debhelper (>= 7.0.50~),
                libluajit-5.1-dev,
                tar,
                libpq-dev,
-               libpam0g-dev
+               libpam0g-dev,
+               uuid-dev
 Standards-Version: 3.9.1
 Homepage: http://nginx.org
 
@@ -312,4 +313,16 @@ Description: Certificate Transparency module
  This module adds support for the TLS signed_certificate_timestamp extension to 
  nginx, which is one of the mechanisms supported by Google's Certificate 
  Transparency project to deliver Signed Certificate Timestamps to TLS clients.
- 
+
+Package: nginx-module-rtmp
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: Media Streaming Server module
+ This module transforms nginx into Media Streaming Server.
+
+Package: nginx-module-ts
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: NGINX MPEG-TS Live module
+ This module receives MPEG-TS over HTTP, produces and manages live HLS_ 
+ and MPEG-DASH_.

@@ -19,13 +19,15 @@
 - [ngx-http-auth-pam](https://github.com/sto/ngx_http_auth_pam_module)
 - [echo-nginx-module](https://github.com/openresty/echo-nginx-module)
 - [nginx-upstream-fair](https://github.com/gnosek/nginx-upstream-fair)
-- [ngx_cache_purge](https://github.com/FRiCKLE/ngx_cache_purge)
+- [ngx_cache_purge](https://github.com/nginx-modules/ngx_cache_purge)
 - [ngx-fancyindex](https://github.com/aperezdc/ngx-fancyindex/)
 - [nginx-upload-progress](https://github.com/masterzen/nginx-upload-progress-module)
 - [ngx_http_substitutions_filter_module](https://github.com/yaoweibin/ngx_http_substitutions_filter_module)
 - [graphite-nginx-module](https://github.com/mailru/graphite-nginx-module/)
 - [nginx-module-vts](https://github.com/vozlt/nginx-module-vts)
 - [nginx-module-ct](https://github.com/grahamedgecombe/nginx-ct) needs newer openssl versions, possible support on artful in future
+- [nginx-module-rtmp](https://github.com/sergey-dryabzhinsky/nginx-rtmp-module)
+- [nginx-module-ts](https://github.com/arut/nginx-ts-module)
 
 ## Base dynamic modules
 - http_xslt module
@@ -96,8 +98,14 @@ load_module modules/ngx_http_uploadprogress_module.so;
 load_module modules/ngx_http_subs_filter_module.so;
 load_module modules/ngx_http_graphite_module.so;
 load module modules/ngx_http_vhost_traffic_status_module.so;
-load_module modules/ngx_ssl_ct_module.so;    
-load_module modules/ngx_http_ssl_ct_module.so;
+load_module modules/ngx_ssl_ct_module.so 
+load_module modules/ngx_http_ssl_ct_module.so 
+load_module modules/ngx_mail_ssl_ct_module.so 
+load_module modules/ngx_stream_ssl_ct_module.so
+load_module modules/ngx_rtmp_module.so;
+load_module modules/ngx_http_ts_module.so.so;
+
+
 ```
   > Note: Use only modules you need to use. With dynamic modules this is pretty easy.
   

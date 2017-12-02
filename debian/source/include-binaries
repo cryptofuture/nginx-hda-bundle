@@ -1,8 +1,14 @@
-debian/extra/ngx_pagespeed/1.12.34.2-x64.tar.gz
-debian/extra/ngx_pagespeed/1.12.34.2-ia32.tar.gz
+debian/extra/ngx_pagespeed/1.13.35.1-x64.tar.gz
+debian/extra/ngx_pagespeed/1.13.35.1-ia32.tar.gz
 debian/extra/ngx_brotli/brotli.tar.gz
 debian/extra/naxsi/t/fuzz/med-post-non-ascii
 debian/extra/naxsi/t/fuzz/mini-unknown-CT-post
 debian/extra/nchan/nchan_logo.png
 debian/extra/nchan/dev/benchmarks-data.ods
 debian/extra/nginx-upload-progress-module/test/100
+debian/extra/nginx-rtmp-module/test/rtmp-publisher/RtmpPlayer.swf
+debian/extra/nginx-rtmp-module/test/rtmp-publisher/RtmpPlayerLight.swf
+debian/extra/nginx-rtmp-module/test/rtmp-publisher/RtmpPublisher.swf
+debian/extra/nginx-rtmp-module/test/www/bg.jpg
+debian/extra/nginx-rtmp-module/test/www/jwplayer/jwplayer.flash.swf
+debian/extra/nginx-rtmp-module/test/www/jwplayer_old/player.swf

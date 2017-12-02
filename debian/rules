@@ -38,7 +38,9 @@ PKGS = nginx nginx-dbg \
 	nginx-module-http-subs-filter \
 	nginx-module-graphite \
 	nginx-module-vts \
-	nginx-module-ct
+	nginx-module-ct \
+	nginx-module-rtmp \
+	nginx-module-ts
 COMMON_CONFIGURE_ARGS := \
 	--prefix=/etc/nginx \
 	--sbin-path=/usr/sbin/nginx \
@@ -99,11 +101,13 @@ COMMON_CONFIGURE_ARGS := \
 	--add-dynamic-module=debian/extra/graphite-nginx-module \
 	--add-dynamic-module=debian/extra/nginx-module-vts \
 	--add-dynamic-module=debian/extra/nginx-ct \
+	--add-dynamic-module=debian/extra/nginx-rtmp-module \
+	--add-dynamic-module=debian/extra/nginx-ts-module \
 	--with-threads \
 	--with-http_slice_module \
 	--with-file-aio \
 	$(WITH_HTTP2) \
-	--with-cc-opt="$(CFLAGS)" \
+	--with-cc-opt="$(CFLAGS) -DTCP_FASTOPEN=23" \
 	--with-ld-opt="$(LDFLAGS)"
 
 %:
@@ -115,6 +119,8 @@ override_dh_strip:
 	dh_strip --dbg-package=nginx-dbg
 
 override_dh_auto_build:
+#	cat objs/Makefile
+
 	dh_auto_build
 	mv objs/nginx objs/nginx-debug
 	mv objs/ngx_http_xslt_filter_module.so objs/ngx_http_xslt_filter_module-debug.so
@@ -152,25 +158,27 @@ override_dh_auto_build:
 	mv objs/ngx_http_vhost_traffic_status_module.so objs/ngx_http_vhost_traffic_status_module-debug.so
 	mv objs/ngx_ssl_ct_module.so objs/ngx_ssl_ct_module-debug.so
 	mv objs/ngx_http_ssl_ct_module.so objs/ngx_http_ssl_ct_module-debug.so
-	#mv objs/ngx_mail_ssl_ct_module.so objs/ngx_mail_ssl_ct_module-debug.so
-	#mv objs/ngx_stream_ssl_ct_module.so objs/ngx_stream_ssl_ct_module-debug.so
+	mv objs/ngx_mail_ssl_ct_module.so objs/ngx_mail_ssl_ct_module-debug.so
+	mv objs/ngx_stream_ssl_ct_module.so objs/ngx_stream_ssl_ct_module-debug.so
+	mv objs/ngx_rtmp_module.so objs/ngx_rtmp_module-debug.so
+	mv objs/ngx_http_ts_module.so objs/ngx_http_ts_module-debug.so
 	CFLAGS="" ./configure $(COMMON_CONFIGURE_ARGS)
 	dh_auto_build
 
 configure_debug:
 ifeq ($(TESTARCH), x86_64)
-# https://dl.google.com/dl/page-speed/psol/1.12.34.2-x64.tar.gz
-	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.12.34.2-x64.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
+# https://dl.google.com/dl/page-speed/psol/1.13.35.1-x64.tar.gz
+	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.13.35.1-x64.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
 endif
 ifeq ($(TESTARCH), amd64)
-	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.12.34.2-x64.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
+	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.13.35.1-x64.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
 endif
-# https://dl.google.com/dl/page-speed/psol/1.12.34.2-ia32.tar.gz
+# https://dl.google.com/dl/page-speed/psol/1.13.35.1-ia32.tar.gz
 ifeq ($(TESTARCH), i686)
-	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.12.34.2-ia32.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
+	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.13.35.1-ia32.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
 endif
 ifeq ($(TESTARCH), i386)
-	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.12.34.2-ia32.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
+	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.13.35.1-ia32.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
 endif
 # Builds with brotli 8d3fdc1dfe9a89079c18fd6428f19cac3edf53de
 	tar xfz $(CURDIR)/debian/extra/ngx_brotli/brotli.tar.gz -C $(CURDIR)/debian/extra/ngx_brotli/deps/brotli/ --strip-components=1

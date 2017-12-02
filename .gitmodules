@@ -42,9 +42,6 @@
 [submodule "debian/extra/nginx-upstream-fair"]
 	path = debian/extra/nginx-upstream-fair
 	url = https://github.com/cryptofuture/nginx-upstream-fair
-[submodule "debian/extra/ngx_cache_purge"]
-	path = debian/extra/ngx_cache_purge
-	url = https://github.com/cryptofuture/ngx_cache_purge
 [submodule "debian/extra/ngx-fancyindex"]
 	path = debian/extra/ngx-fancyindex
 	url = https://github.com/aperezdc/ngx-fancyindex/
@@ -72,3 +69,13 @@
 [submodule "debian/extra/ngx_postgres"]
 	path = debian/extra/ngx_postgres
 	url = https://github.com/konstruxi/ngx_postgres
+[submodule "debian/extra/ngx_cache_purge"]
+	path = debian/extra/ngx_cache_purge
+	url = https://github.com/nginx-modules/ngx_cache_purge
+[submodule "debian/extra/nginx-ts-module"]
+	path = debian/extra/nginx-ts-module
+	url = https://github.com/arut/nginx-ts-module
+[submodule "debian/extra/nginx-rtmp-module"]
+	path = debian/extra/nginx-rtmp-module
+	url = https://github.com/sergey-dryabzhinsky/nginx-rtmp-module
+	branch = dev

@@ -1,3 +1,13 @@
+nginx (1.13.7-1-ppa7~xenial) xenial; urgency=medium
+
+  * Version and modules updates
+  * nginx-module-ts #11
+  * nginx-modle-rtmp #11
+  * TCP Fast Open build flag #14
+  * nginx-module-cache-purge upstream changed #13
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Sat, 25 Nov 2017 17:43:06 +0000
+
 nginx (1.13.6-1-ppa7~xenial) xenial; urgency=medium
 
   * Version and modules updates
