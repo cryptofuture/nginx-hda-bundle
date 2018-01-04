@@ -1,3 +1,11 @@
+nginx (1.13.8-1-ppa7~bionic) bionic; urgency=medium
+
+  * Version and modules updates
+  * nginx-module-sts nginx-module-stream-sts #17
+  * ngx_brotli upstream change #16
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Wed, 03 Jan 2018 17:51:16 +0000
+
 nginx (1.13.7-1-ppa7~xenial) xenial; urgency=medium
 
   * Version and modules updates

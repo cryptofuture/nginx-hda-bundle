@@ -7,7 +7,7 @@
 - [nginx-length-hiding-filter](https://github.com/nulab/nginx-length-hiding-filter-module)
 - [nginx_session_binding_proxy](https://github.com/wburgers/Session-Binding-Proxy)
 - [ngx_devel_kit](https://github.com/simpl/ngx_devel_kit)
-- [ngx_pagespeed](https://github.com/pagespeed/ngx_pagespeed)
+- [ngx_pagespeed](https://github.com/eustas/ngx_brotli)
 - [rds-json-nginx](https://github.com/openresty/rds-json-nginx-module) with pull 4 patch
 - [testcookie-nginx](https://github.com/kyprizel/testcookie-nginx-module)
 - [nginx-upstream-order](https://github.com/flygoast/ngx_http_upstream_order)
@@ -28,6 +28,8 @@
 - [nginx-module-ct](https://github.com/grahamedgecombe/nginx-ct) needs newer openssl versions, possible support on artful in future
 - [nginx-module-rtmp](https://github.com/sergey-dryabzhinsky/nginx-rtmp-module)
 - [nginx-module-ts](https://github.com/arut/nginx-ts-module)
+- [nginx-module-sts](https://github.com/vozlt/nginx-module-sts)
+- [nginx-module-stream-sts](https://github.com/vozlt/nginx-module-stream-sts)
 
 ## Base dynamic modules
 - http_xslt module
@@ -104,7 +106,8 @@ load_module modules/ngx_mail_ssl_ct_module.so
 load_module modules/ngx_stream_ssl_ct_module.so
 load_module modules/ngx_rtmp_module.so;
 load_module modules/ngx_http_ts_module.so.so;
-
+load_module modules/ngx_http_stream_server_traffic_status_module.so;
+load_module modules/ngx_stream_server_traffic_status_module.so;
 
 ```
   > Note: Use only modules you need to use. With dynamic modules this is pretty easy.
