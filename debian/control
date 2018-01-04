@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: hda_launchpad (hda_launchpad) <admin@hda.me>
 XSBC-Original-Maintainer: Sergey Budnevitch <sb@nginx.com>
 Build-Depends: debhelper (>= 7.0.50~),
-               libgd2-xpm-dev,
+               libgd-dev,
                libgeoip-dev,
                libpcre3-dev,
                libperl-dev,
@@ -318,3 +318,17 @@ Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
 Description: NGINX MPEG-TS Live module
  This module receives MPEG-TS over HTTP, produces and manages live HLS_ 
  and MPEG-DASH_.
+
+Package: nginx-module-sts
+Architecture: any
+Priority: extra
+Depends: nginx-module-stream-sts (= ${binary:Version}), ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: Stream server traffic status module
+ This package contains stream server traffic status module for nginx.
+
+Package: nginx-module-stream-sts
+Architecture: any
+Priority: extra
+Depends: nginx-module-sts (= ${binary:Version}), ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: Stream server traffic status core module
+ This package contains stream server traffic status core module for nginx.
