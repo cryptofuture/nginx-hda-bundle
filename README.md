@@ -1,3 +1,6 @@
+  > Need some help with nginx-hda-bundle [snap package](https://github.com/cryptofuture/nginx-hda-bundle-snap)!  
+  > Also Launchpad building service is down for [3 days already](https://twitter.com/launchpadstatus/status/948688233029881856).
+
 # nginx-hda-bundle
 ##### Nginx HDA Bundle - Dynamic Modules Power 
  ## Dynamic modules 
