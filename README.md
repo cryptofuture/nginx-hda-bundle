@@ -27,7 +27,7 @@
 - [ngx_http_substitutions_filter_module](https://github.com/yaoweibin/ngx_http_substitutions_filter_module)
 - [graphite-nginx-module](https://github.com/mailru/graphite-nginx-module/)
 - [nginx-module-vts](https://github.com/vozlt/nginx-module-vts)
-- [nginx-module-ct](https://github.com/grahamedgecombe/nginx-ct) needs newer openssl versions, possible support on artful in future
+- [nginx-module-ct](https://github.com/grahamedgecombe/nginx-ct) needs newer openssl versions, possible support on artful and bionic
 - [nginx-module-rtmp](https://github.com/sergey-dryabzhinsky/nginx-rtmp-module)
 - [nginx-module-ts](https://github.com/arut/nginx-ts-module)
 - [nginx-module-sts](https://github.com/vozlt/nginx-module-sts)
