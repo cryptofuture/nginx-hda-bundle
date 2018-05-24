@@ -60,9 +60,6 @@
 [submodule "debian/extra/naxsi"]
 	path = debian/extra/naxsi
 	url = https://github.com/cryptofuture/naxsi
-[submodule "debian/extra/testcookie-nginx-module"]
-	path = debian/extra/testcookie-nginx-module
-	url = https://github.com/cryptofuture/testcookie-nginx-module
 [submodule "debian/extra/ngx_postgres"]
 	path = debian/extra/ngx_postgres
 	url = https://github.com/konstruxi/ngx_postgres
@@ -85,3 +82,6 @@
 [submodule "debian/extra/nginx-module-stream-sts"]
 	path = debian/extra/nginx-module-stream-sts
 	url = https://github.com/vozlt/nginx-module-stream-sts
+[submodule "debian/extra/testcookie-nginx-module"]
+	path = debian/extra/testcookie-nginx-module
+	url = https://github.com/kyprizel/testcookie-nginx-module
