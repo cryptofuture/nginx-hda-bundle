@@ -167,20 +167,20 @@ override_dh_auto_build:
 
 configure_debug:
 ifeq ($(TESTARCH), x86_64)
-# https://dl.google.com/dl/page-speed/psol/1.13.35.1-x64.tar.gz
-	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.13.35.1-x64.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
+# https://dl.google.com/dl/page-speed/psol/1.13.35.2-x64.tar.gz
+	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.13.35.2-x64.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
 endif
 ifeq ($(TESTARCH), amd64)
-	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.13.35.1-x64.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
+	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.13.35.2-x64.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
 endif
-# https://dl.google.com/dl/page-speed/psol/1.13.35.1-ia32.tar.gz
+# https://dl.google.com/dl/page-speed/psol/1.13.35.2-ia32.tar.gz
 ifeq ($(TESTARCH), i686)
-	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.13.35.1-ia32.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
+	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.13.35.2-ia32.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
 endif
 ifeq ($(TESTARCH), i386)
-	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.13.35.1-ia32.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
+	tar xfz $(CURDIR)/debian/extra/ngx_pagespeed/1.13.35.2-ia32.tar.gz -C $(CURDIR)/debian/extra/ngx_pagespeed/
 endif
-# Builds with brotli 5b4769990dc14a2bd466d2599c946c5652cba4b2
+# Builds with brotli 8d3fdc1dfe9a89079c18fd6428f19cac3edf53de
 	tar xfz $(CURDIR)/debian/extra/ngx_brotli/brotli.tar.gz -C $(CURDIR)/debian/extra/ngx_brotli/deps/brotli/ --strip-components=1
 	CFLAGS="" ./configure $(COMMON_CONFIGURE_ARGS) \
 		--with-debug
