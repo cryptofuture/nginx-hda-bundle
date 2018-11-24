@@ -1,5 +1,5 @@
-debian/extra/ngx_pagespeed/1.13.35.1-x64.tar.gz
-debian/extra/ngx_pagespeed/1.13.35.1-ia32.tar.gz
+debian/extra/ngx_pagespeed/1.13.35.2-x64.tar.gz
+debian/extra/ngx_pagespeed/1.13.35.2-ia32.tar.gz
 debian/extra/ngx_brotli/brotli.tar.gz
 debian/extra/naxsi/t/fuzz/med-post-non-ascii
 debian/extra/naxsi/t/fuzz/mini-unknown-CT-post
