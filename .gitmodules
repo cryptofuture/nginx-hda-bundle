@@ -84,4 +84,5 @@
 	url = https://github.com/kyprizel/testcookie-nginx-module
 [submodule "debian/extra/Session-Binding-Proxy"]
 	path = debian/extra/Session-Binding-Proxy
-	url = https://github.com/cryptofuture/Session-Binding-Proxy
+	url = https://github.com/wburgers/Session-Binding-Proxy
+	branch = openssl-1.1.x
