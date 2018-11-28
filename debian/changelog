@@ -1,3 +1,15 @@
+nginx (1.15.7-1-ppa7~xenial) xenial; urgency=high
+
+  * Version update and njs submodule update
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Wed, 28 Nov 2018 09:08:57 +0000
+
+nginx (1.15.6-3-ppa7~bionic) bionic; urgency=high
+
+  * Switch Session binding module to openssl-1.1.x upstream branch instead of using fork with raw fix
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Tue, 27 Nov 2018 08:48:54 +0000
+
 nginx (1.15.6-2-ppa7~bionic) bionic; urgency=high
 
   * Version and modules updates
