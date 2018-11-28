@@ -1,4 +1,4 @@
-  > Need some help with nginx-hda-bundle [snap package](https://github.com/cryptofuture/nginx-hda-bundle-snap)!  
+  > [Snap package](https://github.com/cryptofuture/nginx-hda-bundle-snap) is now available!  
 
 # nginx-hda-bundle
 ##### Nginx HDA Bundle - Dynamic Modules Power 
