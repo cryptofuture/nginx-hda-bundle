@@ -1,4 +1,6 @@
-  > [Snap package](https://github.com/cryptofuture/nginx-hda-bundle-snap) is now available!  
+  > [Snap package](https://github.com/cryptofuture/nginx-hda-bundle-snap) is now available!
+  
+  > [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/nginx-hda-bundle)
 
 # nginx-hda-bundle
 ##### Nginx HDA Bundle - Dynamic Modules Power 
