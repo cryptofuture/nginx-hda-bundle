@@ -1,7 +1,9 @@
 ## Nginx HDA Bundle - Dynamic Modules Power
 
-  > [Snap package](https://github.com/cryptofuture/nginx-hda-bundle-snap) is now available! 
+  > [Snap package](https://github.com/cryptofuture/nginx-hda-bundle-snap) is now available!
+  
   > Snap package mainly created for use in distributions outside Ubuntu family.
+  
   > [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/nginx-hda-bundle)
   
 ### Add and install from PPA
