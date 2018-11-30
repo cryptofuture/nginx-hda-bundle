@@ -108,12 +108,12 @@ Every 3rd party module is connected as submodule to the repository. So you could
 
 #### Dynamic modules
 - [headers-more-nginx](https://github.com/openresty/headers-more-nginx-module)
-- [lua-nginx](https://github.com/openresty/lua-nginx-module), source [used](https://github.com/cryptofuture/lua-nginx-module) with branch graphite
+- [lua-nginx](https://github.com/openresty/lua-nginx-module), source [used](https://github.com/cryptofuture/lua-nginx-module) with branch `graphite`
 - [nginx-length-hiding-filter](https://github.com/nulab/nginx-length-hiding-filter-module)
 - [ngx_devel_kit](https://github.com/simpl/ngx_devel_kit)
 - [nginx-upstream-order](https://github.com/flygoast/ngx_http_upstream_order)
 - [ngx_pagespeed](https://github.com/pagespeed/ngx_pagespeed)
-- [rds-json-nginx](https://github.com/openresty/rds-json-nginx-module), source [used](https://github.com/cryptofuture/rds-json-nginx-module) with branch pull4
+- [rds-json-nginx](https://github.com/openresty/rds-json-nginx-module), source [used](https://github.com/cryptofuture/rds-json-nginx-module) with branch `pull4`
 - [njs](https://github.com/nginx/njs)
 - [nchan](https://github.com/slact/nchan)
 - [ngx-http-auth-pam](https://github.com/sto/ngx_http_auth_pam_module)
