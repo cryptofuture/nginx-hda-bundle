@@ -173,7 +173,8 @@ Check `/debian/patches` directly for an actual patches
 ### FAQ
 
 #### I want to add my or someone's nginx module to the PPA
-*Module should be dynamic!* 
+*Module should be dynamic!*
+
 *Fast way #1*: Pull request with changes, better if module will be as git submodule.  Don't forget to change rules file and create install rules for module.  
 *Fast way #2*: Contact me, make donation and I would add your module ASAP  
 *Slower way: Create issue request with module description and link to module, and I'll do it myself in spare time.  
