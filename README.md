@@ -78,7 +78,7 @@ I working remotely and income is unstable, so every little bit helps.
 
 Also it would be nice if you provide, a note on `admin@hda.me` after making a donation with information what you like and what you want to improve. So, I would consider giving more time and support to particular project.
 
-I also open to resonable work offers, especially if offer would be close to a field or project I work with.
+I also open to reasonable work offers, especially if offer would be close to a field or project I work with.
 
 #### E-money & Fiat
 
