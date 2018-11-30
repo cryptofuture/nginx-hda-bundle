@@ -106,24 +106,24 @@ Every 3rd party module is connected as submodule to the repository. So you could
 
 #### Dynamic modules
 - [headers-more-nginx](https://github.com/openresty/headers-more-nginx-module)
-- [lua-nginx](https://github.com/openresty/lua-nginx-module), [used](https://github.com/cryptofuture/lua-nginx-module) with branch graphite
+- [lua-nginx](https://github.com/openresty/lua-nginx-module), source [used](https://github.com/cryptofuture/lua-nginx-module) with branch graphite
 - [nginx-length-hiding-filter](https://github.com/nulab/nginx-length-hiding-filter-module)
 - [ngx_devel_kit](https://github.com/simpl/ngx_devel_kit)
 - [nginx-upstream-order](https://github.com/flygoast/ngx_http_upstream_order)
 - [ngx_pagespeed](https://github.com/pagespeed/ngx_pagespeed)
-- [rds-json-nginx](https://github.com/openresty/rds-json-nginx-module), [used](https://github.com/cryptofuture/rds-json-nginx-module) with branch pull4
+- [rds-json-nginx](https://github.com/openresty/rds-json-nginx-module), source [used](https://github.com/cryptofuture/rds-json-nginx-module) with branch pull4
 - [njs](https://github.com/nginx/njs)
 - [nchan](https://github.com/slact/nchan)
 - [ngx-http-auth-pam](https://github.com/sto/ngx_http_auth_pam_module)
 - [echo-nginx-module](https://github.com/openresty/echo-nginx-module)
-- [nginx-upstream-fair](https://github.com/gnosek/nginx-upstream-fair), [used](https://github.com/cryptofuture/nginx-upstream-fair)
+- [nginx-upstream-fair](https://github.com/gnosek/nginx-upstream-fair), source [used](https://github.com/cryptofuture/nginx-upstream-fair)
 - [ngx-fancyindex](https://github.com/aperezdc/ngx-fancyindex/)
 - [nginx-upload-progress](https://github.com/masterzen/nginx-upload-progress-module)
-- [ngx_http_substitutions_filter_module](https://github.com/yaoweibin/ngx_http_substitutions_filter_module), [used](https://github.com/cryptofuture/ngx_http_substitutions_filter_module)
+- [ngx_http_substitutions_filter_module](https://github.com/yaoweibin/ngx_http_substitutions_filter_module), source [used](https://github.com/cryptofuture/ngx_http_substitutions_filter_module)
 - [graphite-nginx-module](https://github.com/mailru/graphite-nginx-module)
 - [nginx-module-vts](https://github.com/vozlt/nginx-module-vts)
 - [nginx-module-ct](https://github.com/grahamedgecombe/nginx-ct)
-- [naxsi](https://github.com/nbs-system/naxsi), [used](https://github.com/cryptofuture/naxsi)
+- [naxsi](https://github.com/nbs-system/naxsi), source [used](https://github.com/cryptofuture/naxsi)
 - [ngx_postgres module (commumity fork)](https://github.com/konstruxi/ngx_postgres)
 - [ngx_cache_purge](https://github.com/nginx-modules/ngx_cache_purge)
 - [nginx-module-ts](https://github.com/arut/nginx-ts-module)
@@ -171,7 +171,7 @@ Check `/debian/patches` directly for an actual patches
 ### FAQ
 
 #### I want to add my or someone's nginx module to the PPA
-**Module should be dynamic!**  
+*Module should be dynamic!* 
 *Fast way #1*: Pull request with changes, better if module will be as git submodule.  Don't forget to change rules file and create install rules for module.  
 *Fast way #2*: Contact me, make donation and I would add your module ASAP  
 *Slower way: Create issue request with module description and link to module, and I'll do it myself in spare time.  
