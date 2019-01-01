@@ -1,3 +1,9 @@
+nginx (1.15.8-1-ppa7~trusty) trusty; urgency=high
+
+  * Version update and submodules update
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Tue, 01 Jan 2019 10:03:37 +0000
+
 nginx (1.15.7-1-ppa7~xenial) xenial; urgency=high
 
   * Version update and njs submodule update

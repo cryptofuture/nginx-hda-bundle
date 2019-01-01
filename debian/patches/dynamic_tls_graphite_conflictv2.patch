@@ -1,7 +1,8 @@
+
 Description: This patch applies https://raw.githubusercontent.com/leonklingele/sslconfig/nginx-1.15.4-dynamic-tls-records/patches/nginx__1.15.4_dynamic_tls_records.patch and https://github.com/mailru/graphite-nginx-module/raw/master/graphite_module_v1_7_7.patch at the same time
 Author: hda_launchpad (hda_launchpad) <admin@hda.me>
---- nginx-1.15.6-1.orig/src/event/ngx_event_openssl.c
-+++ nginx-1.15.6-1/src/event/ngx_event_openssl.c
+--- nginx-1.15.8-1.orig/src/event/ngx_event_openssl.c
++++ nginx-1.15.8-1/src/event/ngx_event_openssl.c
 @@ -1272,6 +1272,7 @@ ngx_ssl_create_connection(ngx_ssl_t *ssl
  
      sc->buffer = ((flags & NGX_SSL_BUFFER) != 0);
@@ -41,7 +42,7 @@ Author: hda_launchpad (hda_launchpad) <admin@hda.me>
          return NGX_OK;
      }
  
-@@ -2120,6 +2138,41 @@ ngx_ssl_send_chain(ngx_connection_t *c,
+@@ -2124,6 +2142,41 @@ ngx_ssl_send_chain(ngx_connection_t *c,
  
      for ( ;; ) {
  
@@ -83,7 +84,7 @@ Author: hda_launchpad (hda_launchpad) <admin@hda.me>
          while (in && buf->last < buf->end && send < limit) {
              if (in->buf->last_buf || in->buf->flush) {
                  flush = 1;
-@@ -2227,6 +2280,9 @@ ngx_ssl_write(ngx_connection_t *c, u_cha
+@@ -2231,6 +2284,9 @@ ngx_ssl_write(ngx_connection_t *c, u_cha
  
      if (n > 0) {
  
@@ -93,8 +94,8 @@ Author: hda_launchpad (hda_launchpad) <admin@hda.me>
          if (c->ssl->saved_read_handler) {
  
              c->read->handler = c->ssl->saved_read_handler;
---- nginx-1.15.6-1.orig/src/event/ngx_event_openssl.h
-+++ nginx-1.15.6-1/src/event/ngx_event_openssl.h
+--- nginx-1.15.8-1.orig/src/event/ngx_event_openssl.h
++++ nginx-1.15.8-1/src/event/ngx_event_openssl.h
 @@ -64,10 +64,19 @@
  #endif
  
@@ -115,7 +116,7 @@ Author: hda_launchpad (hda_launchpad) <admin@hda.me>
  };
  
  
-@@ -92,12 +101,25 @@ struct ngx_ssl_connection_s {
+@@ -92,6 +101,15 @@ struct ngx_ssl_connection_s {
      unsigned                    handshaked:1;
      unsigned                    renegotiation:1;
      unsigned                    buffer:1;
@@ -131,9 +132,10 @@ Author: hda_launchpad (hda_launchpad) <admin@hda.me>
      unsigned                    no_wait_shutdown:1;
      unsigned                    no_send_shutdown:1;
      unsigned                    handshake_buffer_set:1;
-     unsigned                    try_early_data:1;
+@@ -99,6 +117,10 @@ struct ngx_ssl_connection_s {
      unsigned                    in_early:1;
      unsigned                    early_preread:1;
+     unsigned                    write_blocked:1;
 +
 +    ngx_ssl_dyn_rec_t           dyn_rec;
 +    ngx_msec_t                  dyn_rec_last_write;
@@ -141,7 +143,7 @@ Author: hda_launchpad (hda_launchpad) <admin@hda.me>
  };
  
  
-@@ -107,7 +129,7 @@ struct ngx_ssl_connection_s {
+@@ -108,7 +130,7 @@ struct ngx_ssl_connection_s {
  #define NGX_SSL_DFLT_BUILTIN_SCACHE  -5
  
  
@@ -150,8 +152,8 @@ Author: hda_launchpad (hda_launchpad) <admin@hda.me>
  
  typedef struct ngx_ssl_sess_id_s  ngx_ssl_sess_id_t;
  
---- nginx-1.15.6-1.orig/src/http/modules/ngx_http_gzip_filter_module.c
-+++ nginx-1.15.6-1/src/http/modules/ngx_http_gzip_filter_module.c
+--- nginx-1.15.8-1.orig/src/http/modules/ngx_http_gzip_filter_module.c
++++ nginx-1.15.8-1/src/http/modules/ngx_http_gzip_filter_module.c
 @@ -426,8 +426,16 @@ ngx_http_gzip_body_filter(ngx_http_reque
                  goto failed;
              }
@@ -170,8 +172,8 @@ Author: hda_launchpad (hda_launchpad) <admin@hda.me>
  
              if (rc == NGX_OK) {
                  break;
---- nginx-1.15.6-1.orig/src/http/modules/ngx_http_ssl_module.c
-+++ nginx-1.15.6-1/src/http/modules/ngx_http_ssl_module.c
+--- nginx-1.15.8-1.orig/src/http/modules/ngx_http_ssl_module.c
++++ nginx-1.15.8-1/src/http/modules/ngx_http_ssl_module.c
 @@ -246,6 +246,41 @@ static ngx_command_t  ngx_http_ssl_comma
        offsetof(ngx_http_ssl_srv_conf_t, early_data),
        NULL },
@@ -276,8 +278,8 @@ Author: hda_launchpad (hda_launchpad) <admin@hda.me>
      return NGX_CONF_OK;
  }
  
---- nginx-1.15.6-1.orig/src/http/modules/ngx_http_ssl_module.h
-+++ nginx-1.15.6-1/src/http/modules/ngx_http_ssl_module.h
+--- nginx-1.15.8-1.orig/src/http/modules/ngx_http_ssl_module.h
++++ nginx-1.15.8-1/src/http/modules/ngx_http_ssl_module.h
 @@ -58,6 +58,12 @@ typedef struct {
  
      u_char                         *file;
@@ -291,8 +293,8 @@ Author: hda_launchpad (hda_launchpad) <admin@hda.me>
  } ngx_http_ssl_srv_conf_t;
  
  
---- nginx-1.15.6-1.orig/src/http/ngx_http_core_module.c
-+++ nginx-1.15.6-1/src/http/ngx_http_core_module.c
+--- nginx-1.15.8-1.orig/src/http/ngx_http_core_module.c
++++ nginx-1.15.8-1/src/http/ngx_http_core_module.c
 @@ -1166,7 +1166,17 @@ ngx_http_core_content_phase(ngx_http_req
  
      if (r->content_handler) {
@@ -312,9 +314,9 @@ Author: hda_launchpad (hda_launchpad) <admin@hda.me>
          return NGX_OK;
      }
  
---- nginx-1.15.6-1.orig/src/http/ngx_http_request.h
-+++ nginx-1.15.6-1/src/http/ngx_http_request.h
-@@ -586,6 +586,19 @@ struct ngx_http_request_s {
+--- nginx-1.15.8-1.orig/src/http/ngx_http_request.h
++++ nginx-1.15.8-1/src/http/ngx_http_request.h
+@@ -590,6 +590,19 @@ struct ngx_http_request_s {
  
      unsigned                          http_minor:16;
      unsigned                          http_major:16;
