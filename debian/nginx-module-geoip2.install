@@ -1,0 +1,4 @@
+objs/ngx_http_geoip2_module.so usr/lib/nginx/modules
+objs/ngx_http_geoip2_module-debug.so usr/lib/nginx/modules
+objs/ngx_stream_geoip2_module.so usr/lib/nginx/modules
+objs/ngx_stream_geoip2_module-debug.so usr/lib/nginx/modules

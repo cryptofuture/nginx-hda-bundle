@@ -85,3 +85,6 @@
 [submodule "debian/extra/Session-Binding-Proxy"]
 	path = debian/extra/Session-Binding-Proxy
 	url = https://github.com/wburgers/Session-Binding-Proxy
+[submodule "debian/extra/ngx_http_geoip2_module"]
+	path = debian/extra/ngx_http_geoip2_module
+	url = https://github.com/leev/ngx_http_geoip2_module

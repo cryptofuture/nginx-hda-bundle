@@ -1,3 +1,10 @@
+nginx (1.15.12-1-ppa7~bionic) bionic; urgency=high
+
+  * Version update and submodules update
+  * nginx-module-geoip2
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Sun, 21 Apr 2019 12:33:06 +0000
+
 nginx (1.15.8-1-ppa7~trusty) trusty; urgency=high
 
   * Version update and submodules update
