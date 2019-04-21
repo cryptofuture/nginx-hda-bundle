@@ -16,7 +16,8 @@ Build-Depends: debhelper (>= 7.0.50~),
                tar,
                libpq-dev,
                libpam0g-dev,
-               uuid-dev
+               uuid-dev,
+               libmaxminddb-dev
 Standards-Version: 3.9.1
 Homepage: http://nginx.org
 
@@ -332,3 +333,13 @@ Priority: extra
 Depends: nginx-module-sts (= ${binary:Version}), ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
 Description: Stream server traffic status core module
  This package contains stream server traffic status core module for nginx.
+
+Package: nginx-module-geoip2
+Provides: libnginx-mod-http-geoip2
+Conflicts: libnginx-mod-http-geoip2
+Replaces: libnginx-mod-http-geoip2
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: geoip2 modules
+ This package contains dynamic geoip modules for nginx.
