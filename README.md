@@ -59,7 +59,7 @@ load_module modules/ngx_http_fancyindex_module.so;
 load_module modules/ngx_http_uploadprogress_module.so;
 load_module modules/ngx_http_subs_filter_module.so;
 load_module modules/ngx_http_graphite_module.so;
-load module modules/ngx_http_vhost_traffic_status_module.so;
+load_module modules/ngx_http_vhost_traffic_status_module.so;
 load_module modules/ngx_ssl_ct_module.so 
 load_module modules/ngx_http_ssl_ct_module.so 
 load_module modules/ngx_mail_ssl_ct_module.so 
