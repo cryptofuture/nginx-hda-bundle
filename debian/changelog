@@ -1,3 +1,9 @@
+nginx (1.17.3-1-ppa7~bionic) bionic; urgency=high
+
+  * Nginx, modules and patches update
+
+ -- hda_launchpad (hda_launchpad) <admin@hda.me>  Thu, 15 Aug 2019 12:37:35 +0000
+
 nginx (1.17.2-1-ppa7~bionic) bionic; urgency=high
 
   * Version and submodules update
