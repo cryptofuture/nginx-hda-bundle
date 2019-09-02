@@ -88,3 +88,6 @@
 [submodule "debian/extra/ngx_http_geoip2_module"]
 	path = debian/extra/ngx_http_geoip2_module
 	url = https://github.com/leev/ngx_http_geoip2_module
+[submodule "debian/extra/ngx_http_proxy_connect_module"]
+	path = debian/extra/ngx_http_proxy_connect_module
+	url = https://github.com/chobits/ngx_http_proxy_connect_module

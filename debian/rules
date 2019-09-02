@@ -43,7 +43,8 @@ PKGS = nginx nginx-dbg \
 	nginx-module-ts \
 	nginx-module-sts \
 	nginx-module-stream-sts \
-	nginx-module-geoip2
+	nginx-module-geoip2 \
+	nginx-module-http-proxy-connect
 COMMON_CONFIGURE_ARGS := \
 	--prefix=/etc/nginx \
 	--sbin-path=/usr/sbin/nginx \
@@ -109,6 +110,7 @@ COMMON_CONFIGURE_ARGS := \
 	--add-dynamic-module=debian/extra/nginx-module-sts \
 	--add-dynamic-module=debian/extra/nginx-module-stream-sts \
 	--add-dynamic-module=debian/extra/ngx_http_geoip2_module \
+	--add-dynamic-module=debian/extra/ngx_http_proxy_connect_module \
 	--with-threads \
 	--with-http_slice_module \
 	--with-file-aio \
@@ -172,6 +174,7 @@ override_dh_auto_build:
 	mv objs/ngx_stream_server_traffic_status_module.so objs/ngx_stream_server_traffic_status_module-debug.so
 	mv objs/ngx_http_geoip2_module.so objs/ngx_http_geoip2_module-debug.so
 	mv objs/ngx_stream_geoip2_module.so objs/ngx_stream_geoip2_module-debug.so
+	mv objs/ngx_http_proxy_connect_module.so objs/ngx_http_proxy_connect_module-debug.so
 	CFLAGS="" ./configure $(COMMON_CONFIGURE_ARGS)
 	dh_auto_build
 

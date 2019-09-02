@@ -1,3 +1,4 @@
+proxy_connect_rewrite_101504.patch
 name.patch
 xmpp.patch
 dynamic_tls_graphite_conflictv2.patch

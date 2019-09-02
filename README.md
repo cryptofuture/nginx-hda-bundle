@@ -18,7 +18,7 @@ sudo apt-get update
 sudo apt-get install nginx nginx-module-name-you-wish
 ```
 
-Package names: `nginx`, `nginx-dbg`, `nginx-module-brotli`, `nginx-module-cache-purge`, `nginx-module-ct`, `nginx-module-devel-kit`, `nginx-module-fancyindex`, `nginx-module-geoip`, `nginx-module-geoip2`, `nginx-module-graphite`, `nginx-module-http-auth-pam`, `nginx-module-http-echo`, `nginx-module-http-headers-more`, `nginx-module-http-subs-filter`, `nginx-module-image-filter`, `nginx-module-lenght-hiding-filter`, `nginx-module-lua`, `nginx-module-mail`, `nginx-module-naxsi`, `nginx-module-nchan`, `nginx-module-njs`, `nginx-module-pagespeed`, `nginx-module-perl`, `nginx-module-rds-json`, `nginx-module-rtmp`, `nginx-module-session-binding-proxy`, `nginx-module-stream`, `nginx-module-stream-sts`, `nginx-module-sts`, `nginx-module-testcookie`, `nginx-module-ts`, `nginx-module-upload-progress`, `nginx-module-upstream-fair`, `nginx-module-upstream-order`, `nginx-module-vts`, `nginx-module-xslt`
+Package names: `nginx`, `nginx-dbg`, `nginx-module-brotli`, `nginx-module-cache-purge`, `nginx-module-ct`, `nginx-module-devel-kit`, `nginx-module-fancyindex`, `nginx-module-geoip`, `nginx-module-geoip2`, `nginx-module-graphite`, `nginx-module-http-auth-pam`, `nginx-module-http-echo`, `nginx-module-http-headers-more`, `nginx-module-http-subs-filter`, `nginx-module-image-filter`, `nginx-module-lenght-hiding-filter`, `nginx-module-lua`, `nginx-module-mail`, `nginx-module-naxsi`, `nginx-module-nchan`, `nginx-module-njs`, `nginx-module-pagespeed`, `nginx-module-perl`, `nginx-module-rds-json`, `nginx-module-rtmp`, `nginx-module-session-binding-proxy`, `nginx-module-stream`, `nginx-module-stream-sts`, `nginx-module-sts`, `nginx-module-testcookie`, `nginx-module-ts`, `nginx-module-upload-progress`, `nginx-module-upstream-fair`, `nginx-module-upstream-order`, `nginx-module-vts`, `nginx-module-xslt`, `nginx-module-http-proxy-connect`
 
 Add the following to the top of `/etc/nginx/nginx.conf` (for example after pid) and reload nginx
 
@@ -70,6 +70,7 @@ load_module modules/ngx_http_stream_server_traffic_status_module.so;
 load_module modules/ngx_stream_server_traffic_status_module.so;
 load_module modules/ngx_http_geoip2_module.so;
 load_module modules/ngx_stream_geoip2_module.so;
+load_module modules/ngx_http_proxy_connect_module.so;
 ```
 
 ### Donation
@@ -140,6 +141,7 @@ Every 3rd party module is connected as submodule to the repository. So you could
 - [testcookie-nginx](https://github.com/kyprizel/testcookie-nginx-module)
 - [Session-Binding-Proxy](https://github.com/wburgers/Session-Binding-Proxy)
 - [nginx-module-geoip2](https://github.com/leev/ngx_http_geoip2_module)
+- [nginx-module-http-proxy-connect](https://github.com/chobits/ngx_http_proxy_connect_module)
 
 #### Base dynamic modules
 - http_xslt module

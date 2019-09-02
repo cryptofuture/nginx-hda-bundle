@@ -351,3 +351,15 @@ Priority: extra
 Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
 Description: geoip2 modules
  This package contains dynamic geoip modules for nginx.
+
+Package: nginx-module-http-proxy-connect
+Provides: libnginx-mod-http-proxy-connect
+Conflicts: libnginx-mod-http-proxy-connect
+Replaces: libnginx-mod-http-proxy-connect
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends}, ${shlibs:Depends}, nginx (= ${source:Version})
+Description: CONNECT method request module for Nginx
+ The ngx_http_proxy_connect_module module provides support for the CONNECT method request.
+ .
+ This method is mainly used to tunnel SSL requests through proxy servers.
